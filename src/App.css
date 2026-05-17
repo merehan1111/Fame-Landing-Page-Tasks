@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #262053;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  overflow: visible;
+}
+
+.App,
+main {
+  width: 100%;
+  min-height: 100%;
+  overflow: visible;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

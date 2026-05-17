@@ -19,10 +19,11 @@
 .about-section {
   position: relative;
   width: 100%;
-  height: 760px;
+  height: 730px;
   overflow: hidden;
   background-color: #262053;
-  margin-top: -42px;
+  margin-top: -36px;
+  z-index: 2;
 }
 
 /* Top overlay */
@@ -59,10 +60,10 @@
 
 .about-chair {
   position: absolute;
-  left: -65px;
-  top: -28px;
-  width: 760px;
-  height: 760px;
+  left: -72px;
+  top: -68px;
+  width: 805px;
+  height: 820px;
   max-width: none;
   object-fit: cover;
   object-position: left top;
@@ -87,7 +88,7 @@
   position: absolute;
   top: 0;
   right: -1px;
-  width: 300px;
+  width: 330px;
   height: 100%;
   background: linear-gradient(to right, transparent, #262053 92%);
   pointer-events: none;
@@ -100,8 +101,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 215px;
-  background: linear-gradient(to top, #262053 8%, transparent);
+  height: 300px;
+  background: linear-gradient(to top, #262053 18%, transparent);
   pointer-events: none;
   z-index: 2;
 }
@@ -113,16 +114,16 @@
   height: 100%;
 }
 
-/* Glow */
+/* Glow — moved lower + slightly to the right */
 .about-glow {
   position: absolute;
   width: 540px;
   max-width: none;
-  left: 43%;
-  top: 438px;
+  left: 47%;
+  top: 520px;
   transform: translate(-50%, -50%);
   z-index: 0;
-  opacity: 0.78;
+  opacity: 0.84;
   pointer-events: none;
   user-select: none;
   animation: glow-pulse 5s ease-in-out infinite;
@@ -131,17 +132,17 @@
 @keyframes glow-pulse {
   0%,
   100% {
-    opacity: 0.72;
+    opacity: 0.78;
     transform: translate(-50%, -50%) scale(1);
   }
 
   50% {
-    opacity: 0.88;
+    opacity: 0.92;
     transform: translate(-50%, -50%) scale(1.04);
   }
 }
 
-/* Desktop text block */
+/* Text block */
 .about-who,
 .about-fame,
 .about-body,
@@ -155,7 +156,7 @@
 
 /* من نحن */
 .about-who {
-  top: 145px;
+  top: 122px;
   margin: 0;
   text-align: right;
   font-size: 27px;
@@ -166,7 +167,7 @@
 
 /* FAME */
 .about-fame {
-  top: 285px;
+  top: 260px;
   margin: 0;
   font-family: "Bebas Neue", "Arial Black", sans-serif;
   font-size: 60px;
@@ -182,7 +183,7 @@
 
 /* Body Text */
 .about-body {
-  top: 350px;
+  top: 325px;
   max-width: 330px;
   margin: 0;
   font-size: 13px;
@@ -195,40 +196,32 @@
 
 /* Button */
 .about-btn {
-  top: 455px;
+  top: 430px;
   height: 37px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-
   background: linear-gradient(
     to left,
     #c060a0 0%,
     #d890bc 48%,
     #fdf0f8 100%
   );
-
   border-radius: 8px;
   border: 1px solid rgba(240, 180, 220, 0.5);
-
   font-family: "Cairo", sans-serif;
   font-size: 13.5px;
   font-weight: 800;
   color: #262053;
   text-decoration: none;
   white-space: nowrap;
-
   box-shadow:
     0 0 14px rgba(192, 96, 160, 0.25),
     0 3px 10px rgba(0, 0, 0, 0.16);
-
   transition:
     filter 0.25s ease,
     box-shadow 0.25s ease,
     transform 0.25s ease;
-
   overflow: hidden;
 }
 
@@ -264,6 +257,13 @@
     max-width: 1240px;
   }
 
+  .about-chair {
+    left: -85px;
+    top: -78px;
+    width: 850px;
+    height: 850px;
+  }
+
   .about-who,
   .about-fame,
   .about-body,
@@ -272,8 +272,9 @@
   }
 
   .about-glow {
-    left: 45%;
-    top: 445px;
+    left: 49%;
+    top: 535px;
+    width: 570px;
   }
 }
 
@@ -284,7 +285,10 @@
   }
 
   .about-chair {
-    left: -85px;
+    left: -95px;
+    top: -65px;
+    width: 780px;
+    height: 800px;
   }
 
   .about-who,
@@ -301,13 +305,20 @@
 
   .about-glow {
     width: 500px;
-    left: 43%;
-    top: 420px;
+    left: 47%;
+    top: 500px;
   }
 }
 
 /* Small laptop */
 @media (max-width: 1150px) {
+  .about-chair {
+    left: -105px;
+    top: -62px;
+    width: 750px;
+    height: 790px;
+  }
+
   .about-who,
   .about-fame,
   .about-body,
@@ -321,143 +332,131 @@
   }
 
   .about-glow {
-    left: 42%;
+    width: 470px;
+    left: 46%;
+    top: 495px;
   }
 }
 
-/* =========================
-   TABLET LANDSCAPE
-   يفضل قريب من الديسكتوب
-========================= */
-@media (max-width: 1180px) and (min-width: 901px) {
+/* Tablet landscape */
+@media (max-width: 1024px) and (min-width: 769px) {
   .about-section {
     height: 610px;
-    margin-top: -42px;
-    overflow: hidden;
+    margin-top: -36px;
   }
 
   .about-inner {
-    flex-direction: row;
     max-width: 100%;
     height: 100%;
   }
 
   .about-image-col {
-    flex: 0 0 55%;
-    height: 100%;
-    overflow: hidden;
+    flex: 0 0 54%;
   }
 
   .about-chair {
-    left: -80px;
-    top: -25px;
-    width: 660px;
-    height: 660px;
+    left: -105px;
+    top: -58px;
+    width: 700px;
+    height: 730px;
     object-fit: cover;
     object-position: left top;
-    transform: none;
   }
 
   .about-fade-h {
-    display: block;
-    width: 250px;
+    width: 260px;
   }
 
   .about-fade-b {
-    height: 170px;
+    height: 230px;
   }
 
   .about-text-col {
-    flex: 0 0 45%;
-    height: 100%;
+    flex: 0 0 46%;
   }
 
   .about-glow {
     width: 430px;
-    left: 45%;
-    top: 365px;
+    left: 49%;
+    top: 445px;
   }
 
   .about-who,
   .about-fame,
   .about-body,
   .about-btn {
-    position: absolute;
     left: 48px;
     width: 310px;
-    transform: none;
   }
 
   .about-who {
-    top: 120px;
+    top: 105px;
     font-size: 23px;
-    text-align: right;
   }
 
   .about-fame {
-    top: 230px;
+    top: 218px;
     font-size: 56px;
-    text-align: right;
   }
 
   .about-body {
-    top: 295px;
+    top: 282px;
     max-width: 310px;
     font-size: 12.8px;
     line-height: 1.75;
-    text-align: right;
   }
 
   .about-btn {
-    top: 410px;
+    top: 395px;
     width: 310px;
     height: 36px;
     font-size: 13px;
   }
 }
 
-/* =========================
-   TABLET PORTRAIT + MOBILE
-   النص فوق والصورة تحت
-========================= */
-@media (max-width: 900px) {
+/* Mobile + small tablet */
+@media (max-width: 768px) {
   .about-section {
     height: auto;
-    min-height: 0;
-    margin-top: -38px;
+    min-height: auto;
+    margin-top: -30px;
     overflow: hidden;
-    background-color: #262053;
   }
 
   .about-inner {
-    display: flex;
-    flex-direction: column;
+    display: block;
     max-width: 100%;
     height: auto;
   }
 
+  .about-image-col,
+  .about-fade-h,
+  .about-fade-b {
+    display: none;
+  }
+
   .about-text-col {
-    order: 1;
     position: relative;
-    z-index: 3;
-    flex: none;
     width: 100%;
     height: auto;
-    min-height: 0;
-
+    min-height: auto;
+    padding: 58px 18px 68px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 52px 18px 22px;
+    justify-content: center;
     text-align: center;
   }
 
   .about-glow {
-    width: 360px;
-    left: 50%;
-    top: 195px;
-    opacity: 0.72;
+    position: absolute;
+    width: 330px;
+    max-width: none;
+    left: 53%;
+    top: 275px;
+    transform: translate(-50%, -50%);
+    opacity: 0.82;
+    z-index: 0;
   }
 
   .about-who,
@@ -469,6 +468,7 @@
     top: auto;
     width: min(320px, 100%);
     transform: none;
+    z-index: 1;
   }
 
   .about-who {
@@ -488,6 +488,7 @@
 
   .about-body {
     margin: 0 0 18px;
+    width: min(320px, 100%);
     max-width: 320px;
     font-size: 13.2px;
     line-height: 1.72;
@@ -503,56 +504,22 @@
   .about-btn:hover {
     transform: scale(1.02);
   }
-
-  .about-image-col {
-    order: 2;
-    position: relative;
-    z-index: 2;
-    flex: none;
-    width: 100%;
-    height: clamp(210px, 42vw, 330px);
-    overflow: hidden;
-  }
-
-  .about-chair {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-
-    object-fit: cover;
-    object-position: center 48%;
-
-    transform: none;
-    opacity: 0.96;
-    animation: none;
-  }
-
-  .about-fade-h {
-    display: none;
-  }
-
-  .about-fade-b {
-    height: 120px;
-  }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* Mobile */
 @media (max-width: 480px) {
   .about-section {
-    margin-top: -34px;
+    margin-top: -28px;
   }
 
   .about-text-col {
-    padding: 46px 16px 18px;
+    padding: 52px 16px 62px;
   }
 
   .about-glow {
     width: 285px;
-    top: 170px;
+    left: 54%;
+    top: 255px;
   }
 
   .about-who {
@@ -579,36 +546,22 @@
     height: 35px;
     font-size: 12.8px;
   }
-
-  .about-image-col {
-    height: 190px;
-  }
-
-  .about-chair {
-    object-fit: cover;
-    object-position: center 50%;
-  }
-
-  .about-fade-b {
-    height: 90px;
-  }
 }
 
-/* =========================
-   VERY SMALL MOBILE
-========================= */
+/* Very small mobile */
 @media (max-width: 360px) {
   .about-section {
-    margin-top: -30px;
+    margin-top: -24px;
   }
 
   .about-text-col {
-    padding: 42px 14px 16px;
+    padding: 48px 14px 56px;
   }
 
   .about-glow {
-    width: 250px;
-    top: 160px;
+    width: 245px;
+    left: 54%;
+    top: 235px;
   }
 
   .about-who {
@@ -629,13 +582,5 @@
   .about-btn {
     width: min(215px, 100%);
     height: 33px;
-  }
-
-  .about-image-col {
-    height: 165px;
-  }
-
-  .about-chair {
-    object-position: center 50%;
   }
 }

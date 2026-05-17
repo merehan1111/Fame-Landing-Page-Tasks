@@ -1,0 +1,675 @@
+/* ══════════════════════════════════════════════════════
+   ServicesSection.css — FAME Services
+══════════════════════════════════════════════════════ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.fame-services-section,
+.fame-services-section * {
+  font-family: "Cairo", sans-serif;
+}
+
+.fame-services-section {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  margin-top: -210px;
+  overflow: hidden;
+  background: transparent;
+  z-index: 25;
+}
+
+.fame-services-section::before {
+  content: "";
+  position: absolute;
+  inset: 210px 0 0 0;
+  background: #262053;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fame-services-canvas {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1120px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* النجمة */
+.fame-services-star {
+  position: absolute;
+  left: 48.6%;
+  top: 120px;
+  width: 980px;
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  opacity: 1;
+}
+
+/* الإضاءة */
+.fame-services-light {
+  position: absolute;
+  left: 48.2%;
+  top: 32px;
+  width: 145px;
+  height: 145px;
+  transform: translateX(-50%);
+  z-index: 6;
+  pointer-events: none;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.95) 10%,
+      rgba(255, 246, 255, 0.8) 18%,
+      rgba(226, 184, 255, 0.48) 32%,
+      rgba(205, 95, 255, 0.22) 52%,
+      rgba(205, 95, 255, 0.08) 68%,
+      rgba(205, 95, 255, 0) 82%
+    );
+
+  filter: blur(7px);
+  opacity: 0.95;
+  animation: servicesLightPulse 5.2s ease-in-out infinite;
+}
+
+.fame-services-light::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(210, 125, 255, 0.22) 0%,
+      rgba(190, 80, 255, 0.14) 36%,
+      rgba(190, 80, 255, 0.05) 58%,
+      rgba(190, 80, 255, 0) 76%
+    );
+  filter: blur(18px);
+  opacity: 0.88;
+}
+
+.fame-services-light::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.95) 38%,
+      rgba(255, 255, 255, 0.55) 68%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  filter: blur(2px);
+  box-shadow:
+    0 0 16px rgba(255, 255, 255, 0.5),
+    0 0 34px rgba(216, 133, 255, 0.32);
+}
+
+@keyframes servicesLightPulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.94;
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.035);
+    opacity: 1;
+  }
+}
+
+/* العنوان */
+.fame-services-title {
+  position: absolute;
+  top: 250px;
+  right: 150px;
+  z-index: 10;
+  margin: 0;
+  color: #c86a93;
+  font-size: 58px;
+  line-height: 0.9;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+  letter-spacing: -1px;
+}
+
+/* الكروت */
+.fame-services-cards {
+  position: absolute;
+  left: 50%;
+  top: 450px;
+  transform: translateX(-50%);
+  z-index: 12;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 16px;
+
+  width: 860px;
+  max-width: calc(100% - 40px);
+  direction: ltr;
+}
+
+.fame-service-card {
+  direction: rtl;
+  width: 158px;
+  height: 158px;
+  padding: 18px 10px 14px;
+  border-radius: 9px;
+  background: rgba(249, 247, 250, 0.98);
+  box-shadow:
+    0 18px 28px rgba(8, 5, 30, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+  text-align: center;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.fame-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 24px 36px rgba(8, 5, 30, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.fame-service-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 10px;
+  color: #cf6b98;
+}
+
+.fame-service-card h3 {
+  margin: 0 0 7px;
+  color: #262053;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.fame-service-card p {
+  margin: 0 auto;
+  max-width: 118px;
+  color: #262053;
+  font-size: 10px;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .fame-services-section {
+    height: 930px;
+    margin-top: -220px;
+  }
+
+  .fame-services-section::before {
+    inset: 220px 0 0 0;
+  }
+
+  .fame-services-canvas {
+    max-width: 1180px;
+  }
+
+  .fame-services-star {
+    top: 118px;
+    width: 1020px;
+  }
+
+  .fame-services-light {
+    top: 30px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .fame-services-title {
+    top: 252px;
+    right: 165px;
+    font-size: 60px;
+  }
+
+  .fame-services-cards {
+    top: 450px;
+    width: 890px;
+    gap: 17px;
+  }
+
+  .fame-service-card {
+    width: 162px;
+    height: 158px;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1280px) {
+  .fame-services-section {
+    height: 860px;
+    margin-top: -190px;
+  }
+
+  .fame-services-section::before {
+    inset: 190px 0 0 0;
+  }
+
+  .fame-services-canvas {
+    max-width: 1030px;
+  }
+
+  .fame-services-star {
+    top: 112px;
+    width: 920px;
+  }
+
+  .fame-services-light {
+    top: 36px;
+    width: 128px;
+    height: 128px;
+  }
+
+  .fame-services-title {
+    top: 250px;
+    right: 135px;
+    font-size: 54px;
+  }
+
+  .fame-services-cards {
+    top: 438px;
+    width: 805px;
+    gap: 14px;
+  }
+
+  .fame-service-card {
+    width: 148px;
+    height: 152px;
+  }
+}
+
+/* Small Laptop */
+@media (max-width: 1150px) {
+  .fame-services-section {
+    height: 810px;
+    margin-top: -170px;
+  }
+
+  .fame-services-section::before {
+    inset: 170px 0 0 0;
+  }
+
+  .fame-services-canvas {
+    max-width: 930px;
+  }
+
+  .fame-services-star {
+    top: 105px;
+    width: 840px;
+  }
+
+  .fame-services-light {
+    top: 38px;
+    width: 112px;
+    height: 112px;
+  }
+
+  .fame-services-title {
+    top: 245px;
+    right: 112px;
+    font-size: 49px;
+  }
+
+  .fame-services-cards {
+    top: 420px;
+    width: 730px;
+    gap: 12px;
+  }
+
+  .fame-service-card {
+    width: 136px;
+    height: 145px;
+    padding: 16px 9px 12px;
+  }
+
+  .fame-service-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .fame-service-card h3 {
+    font-size: 13px;
+  }
+
+  .fame-service-card p {
+    max-width: 104px;
+    font-size: 9px;
+  }
+}
+
+/* Tablet Landscape */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .fame-services-section {
+    height: 720px;
+    margin-top: -140px;
+  }
+
+  .fame-services-section::before {
+    inset: 140px 0 0 0;
+  }
+
+  .fame-services-canvas {
+    max-width: 780px;
+  }
+
+  .fame-services-star {
+    top: 92px;
+    width: 705px;
+  }
+
+  .fame-services-light {
+    top: 36px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .fame-services-title {
+    top: 230px;
+    right: 82px;
+    font-size: 42px;
+  }
+
+  .fame-services-cards {
+    top: 380px;
+    width: 620px;
+    gap: 10px;
+  }
+
+  .fame-service-card {
+    width: 116px;
+    height: 128px;
+    padding: 13px 8px 10px;
+  }
+
+  .fame-service-icon {
+    width: 33px;
+    height: 33px;
+    margin-bottom: 8px;
+  }
+
+  .fame-service-card h3 {
+    font-size: 11px;
+  }
+
+  .fame-service-card p {
+    max-width: 86px;
+    font-size: 7.8px;
+    line-height: 1.45;
+  }
+}
+
+/* Portrait Tablet + Mobile */
+@media (max-width: 768px) {
+  .fame-services-section {
+    height: auto;
+    min-height: 760px;
+    margin-top: -26px;
+    padding: 45px 16px 70px;
+    background: #262053;
+    overflow: hidden;
+  }
+
+  .fame-services-section::before {
+    display: none;
+  }
+
+  .fame-services-canvas {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    min-height: 650px;
+    height: auto;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .fame-services-star {
+    left: 50%;
+    top: 84px;
+    width: 690px;
+    opacity: 0.45;
+    z-index: 1;
+  }
+
+  .fame-services-light {
+    left: 50%;
+    top: 34px;
+    width: 86px;
+    height: 86px;
+    opacity: 0.82;
+    z-index: 3;
+  }
+
+  .fame-services-title {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: fit-content;
+    margin: 0 auto 250px;
+    color: #c86a93;
+    font-size: 38px;
+    line-height: 0.9;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 4;
+  }
+
+  .fame-services-cards {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    direction: rtl;
+    z-index: 10;
+  }
+
+  .fame-service-card {
+    width: 100%;
+    height: 122px;
+    padding: 13px 8px 10px;
+    border-radius: 8px;
+  }
+
+  .fame-service-icon {
+    width: 31px;
+    height: 31px;
+    margin-bottom: 6px;
+  }
+
+  .fame-service-card h3 {
+    font-size: 11.5px;
+    margin-bottom: 5px;
+  }
+
+  .fame-service-card p {
+    max-width: 108px;
+    font-size: 8.2px;
+    line-height: 1.42;
+  }
+
+  .fame-service-card:nth-child(5) {
+    grid-column: 1 / -1;
+    width: min(100%, 210px);
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .fame-services-section {
+    min-height: 735px;
+    padding: 42px 14px 64px;
+    margin-top: -24px;
+  }
+
+  .fame-services-canvas {
+    max-width: 360px;
+    min-height: 625px;
+  }
+
+  .fame-services-star {
+    top: 82px;
+    width: 610px;
+    opacity: 0.42;
+  }
+
+  .fame-services-light {
+    top: 34px;
+    width: 74px;
+    height: 74px;
+  }
+
+  .fame-services-title {
+    font-size: 34px;
+    margin-bottom: 225px;
+  }
+
+  .fame-services-cards {
+    max-width: 320px;
+    gap: 10px;
+  }
+
+  .fame-service-card {
+    height: 114px;
+    padding: 12px 7px 9px;
+  }
+
+  .fame-service-icon {
+    width: 29px;
+    height: 29px;
+    margin-bottom: 6px;
+  }
+
+  .fame-service-card h3 {
+    font-size: 10.8px;
+  }
+
+  .fame-service-card p {
+    max-width: 96px;
+    font-size: 7.6px;
+    line-height: 1.38;
+  }
+
+  .fame-service-card:nth-child(5) {
+    width: min(100%, 195px);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 390px) {
+  .fame-services-section {
+    min-height: 720px;
+    padding: 40px 12px 58px;
+  }
+
+  .fame-services-canvas {
+    max-width: 330px;
+    min-height: 610px;
+  }
+
+  .fame-services-star {
+    top: 84px;
+    width: 560px;
+    opacity: 0.4;
+  }
+
+  .fame-services-light {
+    top: 34px;
+    width: 68px;
+    height: 68px;
+  }
+
+  .fame-services-title {
+    font-size: 32px;
+    margin-bottom: 210px;
+  }
+
+  .fame-services-cards {
+    max-width: 300px;
+    gap: 9px;
+  }
+
+  .fame-service-card {
+    height: 110px;
+  }
+
+  .fame-service-card:nth-child(5) {
+    width: min(100%, 185px);
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 340px) {
+  .fame-services-section {
+    min-height: 980px;
+    padding: 38px 12px 58px;
+  }
+
+  .fame-services-canvas {
+    max-width: 280px;
+    min-height: 880px;
+  }
+
+  .fame-services-star {
+    top: 86px;
+    width: 500px;
+    opacity: 0.34;
+  }
+
+  .fame-services-title {
+    font-size: 30px;
+    margin-bottom: 195px;
+  }
+
+  .fame-services-cards {
+    grid-template-columns: 1fr;
+    max-width: 230px;
+  }
+
+  .fame-service-card,
+  .fame-service-card:nth-child(5) {
+    width: 100%;
+    height: 116px;
+  }
+}
