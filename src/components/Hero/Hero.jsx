@@ -1,4 +1,4 @@
-import heroBg from "../../assets/2X/Asset 8@2x.png";
+import heroBg from "../../assets/2x/Asset 8@2x.png";
 import pinkButton from "../../assets/SVG/Asset 6.svg";
 import whiteButton from "../../assets/SVG/Asset 7.svg";
 
