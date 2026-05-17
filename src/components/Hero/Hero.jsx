@@ -6,14 +6,13 @@ export default function Hero() {
   return (
     <section
       className="
-        relative min-h-screen w-full overflow-hidden bg-[#262053]
+        relative h-[686px] w-full overflow-hidden bg-[#262053]
 
-        max-lg:min-h-[760px]
-        max-md:min-h-[820px]
-        max-sm:min-h-[780px]
+        max-lg:h-[650px]
+        max-md:h-[100svh] max-md:min-h-[760px]
+        max-sm:min-h-[720px]
       "
     >
-      {/* Hero Background */}
       <img
         src={heroBg}
         alt="Fame Hero"
@@ -26,19 +25,16 @@ export default function Hero() {
         "
       />
 
-      {/* Light Overlay */}
       <div className="absolute inset-0 bg-black/5" />
 
-      {/* Main English Title */}
       <div
         className="
-          absolute left-1/2 top-[22%] z-10
+          absolute left-1/2 top-[155px] z-10
           w-full -translate-x-1/2 px-5 text-center
 
-          max-xl:top-[22%]
-          max-lg:top-[22%]
-          max-md:top-[21%]
-          max-sm:top-[20%]
+          max-lg:top-[145px]
+          max-md:top-[140px]
+          max-sm:top-[130px]
         "
       >
         <h1
@@ -72,17 +68,16 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Arabic Text + Buttons */}
       <div
         dir="rtl"
         className="
-          absolute right-[7.8%] top-[52%] z-20
+          absolute right-[7.8%] top-[380px] z-20
           w-[500px] text-center
 
           max-xl:right-[8%] max-xl:w-[480px]
-          max-lg:right-[5%] max-lg:top-[55%] max-lg:w-[440px]
-          max-md:left-1/2 max-md:right-auto max-md:top-[49%] max-md:w-[90%] max-md:-translate-x-1/2
-          max-sm:top-[48%]
+          max-lg:right-[5%] max-lg:top-[360px] max-lg:w-[440px]
+          max-md:left-1/2 max-md:right-auto max-md:top-[400px] max-md:w-[90%] max-md:-translate-x-1/2
+          max-sm:top-[380px]
         "
       >
         <p
@@ -136,7 +131,6 @@ export default function Hero() {
               alt="تحدث معنا"
               className="h-full w-full object-fill"
             />
-            
           </a>
         </div>
       </div>
