@@ -1,4 +1,4 @@
-import aboutImage from "../../assets/2X/Asset 10@2X.png";
+import aboutImage from "../../assets/2x/Asset 10@2x.png";
 import glowCircle from "../../assets/SVG/Asset 11.svg";
 import bgOverlay from "../../assets/SVG/Asset 9.svg";
 import "./About.css";
