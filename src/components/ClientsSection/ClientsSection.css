@@ -1,0 +1,400 @@
+.fame-clients {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0 80px;
+  z-index: 1;
+
+  /* بدل -500px لأنها كانت بتخفي/تدخل السكشن في اللي قبله */
+  margin-top: 0;
+
+  background: #251f60;
+}
+
+/* القوس الكبير */
+.clients-arc-shape {
+  position: absolute;
+  left: 0;
+  top: -740px;
+  height: 1600px;
+  width: auto;
+  z-index: 2;
+  opacity: 0.52;
+  pointer-events: none;
+}
+
+/* الدائرة المضيئة تحت يمين */
+.clients-glow-shape {
+  position: absolute;
+  right: 100px;
+  top: 270px;
+  width: 500px;
+  height: auto;
+  z-index: 2;
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.fame-clients-container {
+  position: relative;
+  z-index: 4;
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: 118px;
+}
+
+/* =========================
+   عملاؤنا
+========================= */
+
+.clients-main-area {
+  position: relative;
+}
+
+.fame-clients-title {
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  text-align: right;
+  margin: 0 0 76px;
+}
+
+.fame-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 24px;
+  direction: ltr;
+}
+
+.fame-client-card {
+  height: 116px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.fame-clients-btn {
+  display: block;
+  width: 136px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  margin: 36px auto 0;
+  background: linear-gradient(90deg, #b84f99 0%, #6b2b76 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* =========================
+   حلفاؤنا
+========================= */
+
+.fame-allies-area {
+  position: relative;
+  margin-top: 82px;
+  padding-bottom: 40px;
+}
+
+.fame-allies-title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  text-align: right;
+  margin: 0 0 44px;
+}
+
+.fame-allies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  direction: ltr;
+  position: relative;
+  z-index: 2;
+}
+
+.fame-ally-card {
+  position: relative;
+  height: 150px;
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid rgba(195, 83, 160, 0.95);
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.fame-ally-card::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.allies-arrow {
+  position: absolute;
+  top: 105px;
+  width: 26px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: 46px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+  padding: 0;
+}
+
+.allies-arrow-left {
+  left: -44px;
+}
+
+.allies-arrow-right {
+  right: -44px;
+}
+
+/* =========================
+   Large screens
+========================= */
+
+@media (min-width: 1400px) {
+  .fame-clients-container {
+    width: min(1080px, calc(100% - 80px));
+    padding-top: 130px;
+  }
+
+  .fame-clients-title {
+    font-size: 36px;
+  }
+
+  .fame-client-card {
+    height: 122px;
+  }
+
+  .fame-ally-card {
+    height: 158px;
+  }
+}
+
+/* =========================
+   Laptop
+========================= */
+
+@media (max-width: 1200px) {
+  .fame-clients-container {
+    width: min(940px, calc(100% - 44px));
+    padding-top: 100px;
+  }
+
+  .fame-clients-title {
+    margin-bottom: 62px;
+  }
+
+  .fame-clients-grid {
+    gap: 18px;
+  }
+
+  .fame-allies-grid {
+    gap: 20px;
+  }
+
+  .clients-arc-shape {
+    left: -80px;
+    top: -650px;
+    height: 1450px;
+  }
+
+  .clients-glow-shape {
+    right: 20px;
+    top: 300px;
+    width: 460px;
+  }
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+  .fame-clients {
+    min-height: auto;
+    padding-bottom: 75px;
+    margin-top: 0;
+  }
+
+  .fame-clients-container {
+    width: min(720px, calc(100% - 40px));
+    padding-top: 80px;
+  }
+
+  .fame-clients-title {
+    font-size: 30px;
+    margin: 0 0 45px;
+
+    /* عملاؤنا في المنتصف */
+    text-align: center;
+  }
+
+  .fame-clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .fame-client-card {
+    height: 112px;
+  }
+
+  .fame-allies-area {
+    margin-top: 70px;
+    padding-bottom: 35px;
+  }
+
+  .fame-allies-title {
+    font-size: 25px;
+    margin: 0 0 36px;
+    text-align: center;
+  }
+
+  .fame-allies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .fame-ally-card {
+    height: 140px;
+  }
+
+  .clients-arc-shape {
+    left: -40px;
+    top: -220px;
+    height: 1050px;
+  }
+
+  .clients-glow-shape {
+    right: -260px;
+    top: 560px;
+    width: 560px;
+  }
+
+  .allies-arrow-left {
+    left: -20px;
+  }
+
+  .allies-arrow-right {
+    right: -20px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 520px) {
+  .fame-clients {
+    margin-top: 0;
+    padding-bottom: 65px;
+  }
+
+  .fame-clients-container {
+    width: calc(100% - 28px);
+    max-width: 420px;
+    padding-top: 62px;
+    margin: 0 auto;
+  }
+
+  .fame-clients-title {
+    font-size: 28px;
+    margin: 0 0 34px;
+
+    /* عملاؤنا في المنتصف */
+    text-align: center;
+  }
+
+  .fame-clients-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .fame-client-card {
+    height: 105px;
+    border-radius: 8px;
+  }
+
+  .fame-clients-btn {
+    width: 120px;
+    height: 36px;
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  .fame-allies-area {
+    margin-top: 62px;
+    padding-bottom: 30px;
+  }
+
+  .fame-allies-title {
+    font-size: 24px;
+    margin: 0 0 28px;
+    text-align: center;
+  }
+
+  .fame-allies-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .fame-ally-card {
+    height: 105px;
+  }
+
+  .clients-arc-shape {
+    left: -210px;
+    top: -190px;
+    height: 980px;
+  }
+
+  .clients-glow-shape {
+    right: -300px;
+    top: 620px;
+    width: 500px;
+  }
+
+  .allies-arrow {
+    display: none;
+  }
+}
+
+/* =========================
+   Very small phones
+========================= */
+
+@media (max-width: 390px) {
+  .fame-clients-container {
+    width: calc(100% - 22px);
+    padding-top: 56px;
+  }
+
+  .fame-clients-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .fame-client-card,
+  .fame-ally-card {
+    height: 98px;
+  }
+
+  .fame-allies-title {
+    font-size: 23px;
+    text-align: center;
+  }
+}
