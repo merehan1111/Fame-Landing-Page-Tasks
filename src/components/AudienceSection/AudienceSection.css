@@ -10,9 +10,7 @@
   z-index: 20;
 }
 
-/* =========================
-   Real Background Image
-========================= */
+
 
 .audience-bg {
   position: absolute;
@@ -36,11 +34,7 @@
   z-index: 5;
 }
 
-/* =========================
-   Title
-   Desktop: aligned with cards
-   Mobile: centered above person
-========================= */
+
 
 .audience-title {
   position: absolute;
@@ -56,9 +50,7 @@
   z-index: 8;
 }
 
-/* =========================
-   Layout
-========================= */
+
 
 .audience-content {
   position: relative;
@@ -67,9 +59,7 @@
   z-index: 5;
 }
 
-/* =========================
-   Person Image
-========================= */
+
 
 .audience-person-wrap {
   position: absolute;
@@ -113,9 +103,7 @@
   pointer-events: none;
 }
 
-/* =========================
-   Cards
-========================= */
+
 
 .audience-cards {
   position: absolute;
@@ -183,7 +171,7 @@
   margin: 0;
   max-width: 195px;
   color: #ffffff;
-  font-size: 8.2px;
+  font-size: 11px;
   font-weight: 800;
   line-height: 1.8;
 }
@@ -219,9 +207,7 @@
   stroke: #ffffff;
 }
 
-/* =========================
-   Laptop / Small Desktop
-========================= */
+
 
 @media (max-width: 1200px) {
   .audience-section {
@@ -266,9 +252,7 @@
   }
 }
 
-/* =========================
-   Tablet
-========================= */
+
 
 @media (max-width: 992px) {
   .audience-section {
@@ -335,13 +319,11 @@
 
   .audience-card-text p {
     max-width: 185px;
-    font-size: 7.9px;
+    font-size: 10.5px;
   }
 }
 
-/* =========================
-   Mobile / Small Tablet
-========================= */
+
 
 @media (max-width: 768px) {
   .audience-section {
@@ -422,7 +404,7 @@
 
   .audience-card-text p {
     max-width: 198px;
-    font-size: 8px;
+    font-size: 10.5px;
   }
 
   .audience-card-icon {
@@ -437,9 +419,7 @@
   }
 }
 
-/* =========================
-   Mobile
-========================= */
+
 
 @media (max-width: 480px) {
   .audience-section {
@@ -486,7 +466,7 @@
 
   .audience-card-text p {
     max-width: 176px;
-    font-size: 7.7px;
+    font-size: 10px;
     line-height: 1.75;
   }
 
@@ -502,9 +482,7 @@
   }
 }
 
-/* =========================
-   Very Small Mobile
-========================= */
+
 
 @media (max-width: 390px) {
   .audience-section {
@@ -549,7 +527,7 @@
 
   .audience-card-text p {
     max-width: 162px;
-    font-size: 7.3px;
+    font-size: 9.5px;
   }
 
   .audience-card-icon {

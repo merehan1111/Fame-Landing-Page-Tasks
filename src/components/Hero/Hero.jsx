@@ -86,7 +86,7 @@ export default function Hero() {
 
             max-lg:text-[17px]
             max-md:mx-auto max-md:max-w-[340px] max-md:text-[15px] max-md:leading-8
-            max-sm:text-[13px] max-sm:leading-7
+            max-sm:text-[14px] max-sm:leading-7
           "
         >
           منظومة متكاملة لإدارة وتطوير أعمال المشاهير

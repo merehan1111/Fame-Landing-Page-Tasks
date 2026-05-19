@@ -12,7 +12,7 @@
 
       .cls-2, .cls-3 {
         fill: #fff;
-        font-family: BahijTheSansArabic-Plain, 'Bahij TheSansArabic';
+        : BahijTheSansArabic-Plain, 'Bahij TheSansArabic';
       }
 
       .cls-3 {

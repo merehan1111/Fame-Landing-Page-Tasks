@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap");
-
 *,
 *::before,
 *::after {
@@ -11,6 +9,9 @@
   font-family: "Cairo", sans-serif;
 }
 
+/* =========================
+   Main Section
+========================= */
 .why-fame-section {
   position: relative;
   width: 100%;
@@ -18,12 +19,22 @@
   overflow: hidden;
   background: #2c225c;
   z-index: 20;
+
+  /* Main responsive controls */
+  --content-shift-y: -70px;
+
+  --star-size: 330px;
+  --star-top: 300px;
+
+  --glow-size: 590px;
+  --glow-top: 388px;
+
+  --card-size: 148px;
 }
 
 /* =========================
    Background
 ========================= */
-
 .why-fame-bg {
   position: absolute;
   inset: 0;
@@ -36,12 +47,11 @@
   pointer-events: none;
   user-select: none;
 
-  /* قلب الخلفية فوق/تحت */
+  /* flip background vertically */
   transform: scaleY(-1);
   transform-origin: center;
 }
 
-/* Overlay ناعم فوق الخلفية */
 .why-fame-section::after {
   content: "";
   position: absolute;
@@ -59,7 +69,6 @@
 /* =========================
    Container
 ========================= */
-
 .why-fame-container {
   position: relative;
   z-index: 5;
@@ -69,12 +78,14 @@
   margin: 0 auto;
   padding: 0 24px;
   overflow: visible;
+
+  /* Move all content upward safely */
+  transform: translateY(var(--content-shift-y));
 }
 
 /* =========================
    Title
 ========================= */
-
 .why-fame-title {
   position: absolute;
   top: 132px;
@@ -89,40 +100,38 @@
 }
 
 /* =========================
-   Glow Behind Star
+   Star Glow
 ========================= */
-
 .why-fame-star-glow {
   position: absolute;
   left: 50%;
-  top: 388px;
-  width: 430px;
-  height: 430px;
+  top: var(--glow-top);
+  width: var(--glow-size);
+  height: var(--glow-size);
   transform: translate(-50%, -50%);
   border-radius: 50%;
   z-index: 6;
   pointer-events: none;
   background: radial-gradient(
     circle,
-    rgba(255, 244, 249, 0.4) 0%,
-    rgba(255, 173, 233, 0.3) 18%,
-    rgba(239, 91, 200, 0.22) 36%,
-    rgba(203, 63, 174, 0.11) 58%,
-    rgba(203, 63, 174, 0.04) 72%,
+    rgba(255, 244, 249, 0.42) 0%,
+    rgba(255, 173, 233, 0.32) 18%,
+    rgba(239, 91, 200, 0.24) 36%,
+    rgba(203, 63, 174, 0.13) 58%,
+    rgba(203, 63, 174, 0.05) 72%,
     rgba(203, 63, 174, 0) 82%
   );
-  filter: blur(20px);
+  filter: blur(22px);
 }
 
 /* =========================
-   Star
+   Main Star
 ========================= */
-
 .why-fame-star {
   position: absolute;
   left: 50%;
-  top: 300px;
-  width: 228px;
+  top: var(--star-top);
+  width: var(--star-size);
   height: auto;
   transform: translateX(-50%);
   z-index: 12;
@@ -130,17 +139,16 @@
   pointer-events: none;
   user-select: none;
   filter:
-    drop-shadow(0 14px 26px rgba(56, 19, 72, 0.22))
-    drop-shadow(0 0 20px rgba(255, 108, 218, 0.24));
+    drop-shadow(0 18px 30px rgba(56, 19, 72, 0.26))
+    drop-shadow(0 0 30px rgba(255, 108, 218, 0.28));
 }
 
 /* =========================
    Cards
 ========================= */
-
 .why-fame-card {
   position: absolute;
-  width: 148px;
+  width: var(--card-size);
   height: auto;
   display: block;
   z-index: 10;
@@ -150,53 +158,54 @@
   filter: drop-shadow(0 14px 20px rgba(33, 14, 54, 0.16));
 }
 
-/* =========================
-   Desktop Layout
-========================= */
-
-/* احتراف */
+/* Wider card distribution */
 .why-card-left-top {
-  left: calc(50% - 405px);
+  left: calc(50% - 455px);
   top: 292px;
   transform: rotate(5deg);
 }
 
-/* استقلالية */
 .why-card-left-middle {
-  left: calc(50% - 285px);
+  left: calc(50% - 320px);
   top: 455px;
   transform: rotate(3deg);
 }
 
-/* منظومة */
 .why-card-right-top {
-  left: calc(50% + 252px);
+  left: calc(50% + 305px);
   top: 292px;
   transform: rotate(-5deg);
 }
 
-/* بيانات */
 .why-card-right-middle {
-  left: calc(50% + 132px);
+  left: calc(50% + 165px);
   top: 455px;
   transform: rotate(-3deg);
 }
 
-/* ذكاء اصطناعي */
 .why-card-bottom {
   left: 50%;
-  top: 600px;
+  top: 610px;
   width: 142px;
   transform: translateX(-50%) rotate(-3deg);
 }
 
 /* =========================
-   Large Desktop
+   Large Screens
 ========================= */
-
 @media (min-width: 1400px) {
   .why-fame-section {
     min-height: 790px;
+
+    --content-shift-y: -80px;
+
+    --star-size: 350px;
+    --star-top: 308px;
+
+    --glow-size: 630px;
+    --glow-top: 398px;
+
+    --card-size: 154px;
   }
 
   .why-fame-container {
@@ -210,54 +219,48 @@
     font-size: 20px;
   }
 
-  .why-fame-star-glow {
-    top: 398px;
-    width: 455px;
-    height: 455px;
-  }
-
-  .why-fame-star {
-    top: 308px;
-    width: 236px;
-  }
-
-  .why-fame-card {
-    width: 154px;
-  }
-
   .why-card-left-top {
-    left: calc(50% - 425px);
+    left: calc(50% - 480px);
     top: 300px;
   }
 
   .why-card-left-middle {
-    left: calc(50% - 300px);
+    left: calc(50% - 340px);
     top: 468px;
   }
 
   .why-card-right-top {
-    left: calc(50% + 270px);
+    left: calc(50% + 325px);
     top: 300px;
   }
 
   .why-card-right-middle {
-    left: calc(50% + 144px);
+    left: calc(50% + 180px);
     top: 468px;
   }
 
   .why-card-bottom {
-    top: 620px;
+    top: 625px;
     width: 148px;
   }
 }
 
 /* =========================
-   Laptop
+   Medium Desktop
 ========================= */
-
 @media (max-width: 1200px) {
   .why-fame-section {
     min-height: 720px;
+
+    --content-shift-y: -55px;
+
+    --star-size: 300px;
+    --star-top: 288px;
+
+    --glow-size: 540px;
+    --glow-top: 366px;
+
+    --card-size: 136px;
   }
 
   .why-fame-container {
@@ -271,55 +274,48 @@
     font-size: 17px;
   }
 
-  .why-fame-star-glow {
-    top: 366px;
-    width: 380px;
-    height: 380px;
-  }
-
-  .why-fame-star {
-    top: 288px;
-    width: 208px;
-  }
-
-  .why-fame-card {
-    width: 136px;
-  }
-
   .why-card-left-top {
-    left: calc(50% - 330px);
+    left: calc(50% - 380px);
     top: 282px;
   }
 
   .why-card-left-middle {
-    left: calc(50% - 228px);
-    top: 420px;
+    left: calc(50% - 255px);
+    top: 425px;
   }
 
   .why-card-right-top {
-    left: calc(50% + 194px);
+    left: calc(50% + 240px);
     top: 282px;
   }
 
   .why-card-right-middle {
-    left: calc(50% + 92px);
-    top: 420px;
+    left: calc(50% + 115px);
+    top: 425px;
   }
 
   .why-card-bottom {
-    top: 552px;
-    width: 130px;
+    top: 565px;
+    width: 132px;
   }
 }
 
 /* =========================
    Tablet
-   توزيع دائري مصغر ومنظم
 ========================= */
-
 @media (max-width: 992px) {
   .why-fame-section {
     min-height: 700px;
+
+    --content-shift-y: -35px;
+
+    --star-size: 265px;
+    --star-top: 255px;
+
+    --glow-size: 460px;
+    --glow-top: 345px;
+
+    --card-size: 126px;
   }
 
   .why-fame-container {
@@ -335,61 +331,49 @@
   }
 
   .why-fame-star-glow {
-    top: 345px;
-    width: 340px;
-    height: 340px;
     filter: blur(18px);
   }
 
-  .why-fame-star {
-    top: 255px;
-    width: 195px;
-  }
-
-  .why-fame-card {
-    width: 126px;
-  }
-
   .why-card-left-top {
-    left: calc(50% - 280px);
+    left: calc(50% - 300px);
     top: 255px;
-    transform: rotate(5deg);
   }
 
   .why-card-left-middle {
-    left: calc(50% - 188px);
-    top: 385px;
-    transform: rotate(3deg);
+    left: calc(50% - 205px);
+    top: 390px;
   }
 
   .why-card-right-top {
-    left: calc(50% + 154px);
+    left: calc(50% + 175px);
     top: 255px;
-    transform: rotate(-5deg);
   }
 
   .why-card-right-middle {
-    left: calc(50% + 62px);
-    top: 385px;
-    transform: rotate(-3deg);
+    left: calc(50% + 78px);
+    top: 390px;
   }
 
   .why-card-bottom {
-    top: 510px;
-    width: 118px;
+    top: 520px;
+    width: 120px;
   }
 }
 
 /* =========================
-   Mobile + Small Tablet
-   Grid Layout احترافي للفون
+   Mobile / Small Tablet
 ========================= */
-
 @media (max-width: 768px) {
   .why-fame-section {
     min-height: auto;
     padding: 48px 16px 64px;
     overflow: hidden;
+
+    /* Do not pull content up on mobile */
+    --content-shift-y: 0px;
+
+    --star-size: 195px;
+    --glow-size: 310px;
   }
 
   .why-fame-container {
@@ -406,6 +390,7 @@
     row-gap: 18px;
     justify-items: center;
     align-items: start;
+    transform: translateY(var(--content-shift-y));
   }
 
   .why-fame-title {
@@ -423,9 +408,9 @@
 
   .why-fame-star-glow {
     left: 50%;
-    top: 128px;
-    width: 250px;
-    height: 250px;
+    top: 140px;
+    width: var(--glow-size);
+    height: var(--glow-size);
     transform: translateX(-50%);
     filter: blur(18px);
   }
@@ -435,7 +420,7 @@
     left: auto;
     top: auto;
     grid-column: 1 / -1;
-    width: 155px;
+    width: var(--star-size);
     transform: none;
     margin: 4px auto 14px;
   }
@@ -444,7 +429,7 @@
     position: relative;
     left: auto;
     top: auto;
-    width: min(158px, 43vw);
+    width: min(160px, 43vw);
     transform: none !important;
   }
 
@@ -467,23 +452,26 @@
   .why-card-bottom {
     order: 7;
     grid-column: 1 / -1;
-    width: min(145px, 40vw);
+    width: min(150px, 40vw);
   }
 }
 
 /* =========================
-   Mobile
+   Small Mobile
 ========================= */
-
 @media (max-width: 480px) {
   .why-fame-section {
     padding: 42px 12px 56px;
+
+    --star-size: 160px;
+    --glow-size: 250px;
   }
 
   .why-fame-container {
-    max-width: 350px;
-    column-gap: 14px;
-    row-gap: 16px;
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    column-gap: 0;
+    row-gap: 14px;
   }
 
   .why-fame-title {
@@ -492,30 +480,34 @@
   }
 
   .why-fame-star-glow {
-    top: 116px;
-    width: 220px;
-    height: 220px;
+    top: 126px;
   }
 
   .why-fame-star {
-    width: 138px;
     margin-bottom: 14px;
   }
 
   .why-fame-card {
-    width: min(140px, 43vw);
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
   }
 
   .why-card-bottom {
-    width: min(130px, 40vw);
+    grid-column: auto;
+    width: 100%;
+    max-width: 240px;
   }
 }
 
 /* =========================
-   Very Small Mobile
+   Extra Small Mobile
 ========================= */
-
 @media (max-width: 380px) {
+  .why-fame-section {
+    --star-size: 145px;
+  }
+
   .why-fame-container {
     max-width: 315px;
     column-gap: 10px;
@@ -524,10 +516,6 @@
 
   .why-fame-title {
     font-size: 15px;
-  }
-
-  .why-fame-star {
-    width: 116px;
   }
 
   .why-fame-card {

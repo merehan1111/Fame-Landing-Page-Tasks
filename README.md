@@ -1,16 +1,49 @@
-# React + Vite
+# Fame Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Demo:** [https://fame-landing-page-tasks-mr15.vercel.app/](https://fame-landing-page-tasks-mr15.vercel.app/)
 
-Currently, two official plugins are available:
+## Task Overview
+The task aims to develop a modern, highly responsive landing page. The primary objective is to deliver a cohesive and visually stunning user interface that adapts seamlessly to desktop, tablet, and mobile devices. It focuses on ensuring cross-device compatibility and an intuitive user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
+This landing page leverages modern web development tools:
+- **Framework:** React.js
+- **Build Tool:** Vite (for fast, optimized builds)
+- **Styling:** CSS3 variables & flexbox/grid
+- **Deployment & Hosting:** Vercel
 
-## React Compiler
+## Run Steps
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Follow these steps to run the application locally on your machine:
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/merehan1111/Fame-Landing-Page-Tasks.git
+   cd Fame-Landing-Page-Tasks
+   ```
+
+2. **Install the dependencies**
+   Using npm:
+   ```bash
+   npm install
+   ```
+   Or using yarn:
+   ```bash
+   yarn install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   *The terminal will provide a local URL where you can view the application.*
+
+4. **Build for Production** 
+   When you're ready to deploy, create an optimized build:
+   ```bash
+   npm run build
+   ```
+

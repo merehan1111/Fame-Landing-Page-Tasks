@@ -15,7 +15,6 @@ export default function Header() {
   return (
     <header className="absolute left-0 top-0 z-50 w-full">
       <div className="relative mx-auto h-[96px] w-full max-w-[1376px] px-5">
-        {/* Contact Button Desktop */}
         <a
           href="#contact"
           className="
@@ -30,7 +29,6 @@ export default function Header() {
           تواصل معنا
         </a>
 
-        {/* Desktop Navigation */}
         <nav
           dir="rtl"
           className="
@@ -54,7 +52,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Logo */}
         <img
           src={logo}
           alt="Fame Logo"
@@ -66,7 +63,6 @@ export default function Header() {
           "
         />
 
-        {/* Mobile Menu Button */}
         <button
           type="button"
           onClick={() => setOpen(!open)}
@@ -83,7 +79,6 @@ export default function Header() {
           <span className="h-[2px] w-6 bg-white"></span>
         </button>
 
-        {/* Mobile Dropdown */}
         {open && (
           <div
             dir="rtl"

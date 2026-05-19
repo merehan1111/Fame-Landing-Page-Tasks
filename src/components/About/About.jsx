@@ -6,7 +6,6 @@ import "./About.css";
 export default function About() {
   return (
     <section id="about" className="about-section">
-      {/* Asset 9 = top-edge gradient overlay */}
       <img
         src={bgOverlay}
         alt=""
@@ -15,14 +14,12 @@ export default function About() {
       />
 
       <div className="about-inner">
-        {/* LEFT — Chair */}
         <div className="about-image-col">
           <img src={aboutImage} alt="Fame About" className="about-chair" />
           <div className="about-fade-h" />
           <div className="about-fade-b" />
         </div>
 
-        {/* RIGHT — Text */}
         <div className="about-text-col" dir="rtl">
           <img
             src={glowCircle}

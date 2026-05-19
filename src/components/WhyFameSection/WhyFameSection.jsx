@@ -4,14 +4,7 @@ import bgImage  from "../../assets/SVG/Asset 19.svg";
 
 import starRobot from "../../assets/SVG/Asset 24.svg";
 
-/*
-  حسب النتيجة اللي ظهرت عندك:
-  Asset 30 = احتراف
-  Asset 29 = استقلالية
-  Asset 28 = منظومة
-  Asset 27 = بيانات
-  Asset 31 = ذكاء اصطناعي
-*/
+
 
 import cardProfessional from "../../assets/SVG/Asset 30.svg";
 import cardIndependence from "../../assets/SVG/Asset 29.svg";
@@ -22,7 +15,7 @@ import cardAI from "../../assets/SVG/Asset 31.svg";
 export default function WhyFameSection() {
   return (
     <section className="why-fame-section" dir="rtl">
-      
+
       <img
         src={bgImage}
         alt=""

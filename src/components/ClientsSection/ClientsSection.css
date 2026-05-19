@@ -1,17 +1,13 @@
 .fame-clients {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: 0 0 80px;
-  z-index: 1;
-
-  /* بدل -500px لأنها كانت بتخفي/تدخل السكشن في اللي قبله */
-  margin-top: 0;
-
-  background: #251f60;
+    z-index: 1;
+    background: #382259c7;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 0 80px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* القوس الكبير */
 .clients-arc-shape {
   position: absolute;
   left: 0;
@@ -23,7 +19,6 @@
   pointer-events: none;
 }
 
-/* الدائرة المضيئة تحت يمين */
 .clients-glow-shape {
   position: absolute;
   right: 100px;
@@ -43,9 +38,7 @@
   padding-top: 118px;
 }
 
-/* =========================
-   عملاؤنا
-========================= */
+
 
 .clients-main-area {
   position: relative;
@@ -82,16 +75,15 @@
   margin: 36px auto 0;
   background: linear-gradient(90deg, #b84f99 0%, #6b2b76 100%);
   color: #ffffff;
-  font-family: inherit;
+font-family: 'cairo';
+
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
   line-height: 1;
 }
 
-/* =========================
-   حلفاؤنا
-========================= */
+
 
 .fame-allies-area {
   position: relative;
@@ -161,9 +153,7 @@
   right: -44px;
 }
 
-/* =========================
-   Large screens
-========================= */
+
 
 @media (min-width: 1400px) {
   .fame-clients-container {
@@ -184,9 +174,7 @@
   }
 }
 
-/* =========================
-   Laptop
-========================= */
+
 
 @media (max-width: 1200px) {
   .fame-clients-container {
@@ -219,9 +207,7 @@
   }
 }
 
-/* =========================
-   Tablet
-========================= */
+
 
 @media (max-width: 900px) {
   .fame-clients {
@@ -239,7 +225,6 @@
     font-size: 30px;
     margin: 0 0 45px;
 
-    /* عملاؤنا في المنتصف */
     text-align: center;
   }
 
@@ -293,9 +278,7 @@
   }
 }
 
-/* =========================
-   Mobile
-========================= */
+
 
 @media (max-width: 520px) {
   .fame-clients {
@@ -314,7 +297,6 @@
     font-size: 28px;
     margin: 0 0 34px;
 
-    /* عملاؤنا في المنتصف */
     text-align: center;
   }
 
@@ -372,9 +354,7 @@
   }
 }
 
-/* =========================
-   Very small phones
-========================= */
+
 
 @media (max-width: 390px) {
   .fame-clients-container {

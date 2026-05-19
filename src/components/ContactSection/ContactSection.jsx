@@ -1,13 +1,13 @@
 import "./ContactSection.css";
-import contactPerson from "../../assets/2x/contactperson.png"; // صورة الشخص
-import linesBg from "../../assets/2x/contactus.png"; // الخلفية اللي فيها الخطوط
+import contactPerson from "../../assets/2x/contactperson.png";
+import linesBg from "../../assets/2x/contactus.png";
 
 export default function ContactSection() {
   return (
     <section
       className="fame-contact"
       dir="rtl"
-      style={{ backgroundImage: `url(${linesBg})` }}
+      style={{ "--contact-bg": `url(${linesBg})` }}
     >
       <div className="fame-contact-container">
         <h2 className="fame-contact-title">تواصل معنا</h2>
@@ -16,6 +16,7 @@ export default function ContactSection() {
           <div className="fame-contact-image">
             <img src={contactPerson} alt="تواصل معنا" />
           </div>
+
           <div className="fame-contact-form-box">
             <form className="fame-contact-form">
               <div className="fame-form-group">
@@ -43,11 +44,8 @@ export default function ContactSection() {
               </button>
             </form>
           </div>
-
-        
         </div>
       </div>
     </section>
-    
   );
 }

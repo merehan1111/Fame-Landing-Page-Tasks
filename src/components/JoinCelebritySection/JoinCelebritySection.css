@@ -4,12 +4,10 @@
   background: #251f60;
   overflow: visible;
 
-  /* مهم: يخلي السكشن ده فوق السكشن اللي قبله */
   z-index: 999;
   isolation: isolate;
 }
 
-/* البانر */
 .join-banner {
   position: relative;
   width: 100%;
@@ -19,7 +17,6 @@
   z-index: 1;
 }
 
-/* صورة الخلفية */
 .join-banner-img {
   position: absolute;
   inset: 0;
@@ -31,7 +28,6 @@
   z-index: 1;
 }
 
-/* طبقة الألوان */
 .join-banner::after {
   content: "";
   position: absolute;
@@ -55,7 +51,6 @@
     );
 }
 
-/* النجمة فوق المحتوى */
 .join-star {
   position: absolute;
   top: -75px;
@@ -64,13 +59,11 @@
   height: auto;
   transform: translateX(-50%);
 
-  /* مهم جداً */
   z-index: 9999;
 
   pointer-events: none;
 }
 
-/* الزر */
 .join-btn {
   position: absolute;
   left: 160px;
@@ -94,7 +87,7 @@
 
   color: #ffffff;
   text-decoration: none;
-  font-family: inherit;
+font-family: 'cairo';
   font-size: 27px;
   font-weight: 900;
   line-height: 1;
@@ -119,7 +112,6 @@
   white-space: nowrap;
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .join-banner {
     height: 220px;

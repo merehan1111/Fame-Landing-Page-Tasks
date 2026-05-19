@@ -1,58 +1,66 @@
 .fame-contact {
   position: relative;
   width: 100%;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-color: #16104f;
-
-  /* مهم: لا تخفي السكشن اللي بعده */
-  overflow: visible;
-
-  padding: 80px 0 120px;
-
-  /* مهم: خلي السكشن طبيعي في ترتيب الصفحة */
-  z-index: 1;
+  margin: 0;
+  padding: 48px 0 58px;
+  overflow: hidden;
+  background: #15104a;
 }
 
 .fame-contact::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(18, 13, 65, 0.25);
+  background-image: var(--contact-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  z-index: 0;
   pointer-events: none;
+}
+
+.fame-contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 15, 75, 0.1);
   z-index: 1;
+  pointer-events: none;
 }
 
 .fame-contact-container {
   position: relative;
   z-index: 2;
-  width: min(1080px, calc(100% - 48px));
+  width: min(1040px, calc(100% - 40px));
   margin: 0 auto;
 }
 
 .fame-contact-title {
+  position: relative;
+  z-index: 3;
   color: #ffffff;
-  font-size: 38px;
-  font-weight: 900;
-  line-height: 1.2;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
   text-align: right;
-  margin: 0 0 65px;
-  margin-top: 40px
+  margin: 0 0 62px;
+  padding: 0;
+  background: transparent;
 }
 
 .fame-contact-wrapper {
+  width: 100%;
   display: grid;
-  grid-template-columns: 390px 560px;
-  justify-content: center;
+  grid-template-columns: 360px 590px;
   align-items: stretch;
+  justify-content: center;
   direction: ltr;
 }
 
 .fame-contact-image {
-  width: 390px;
-  height: 520px;
-  border-radius: 14px 0 0 14px;
+  width: 360px;
+  height: 540px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -65,11 +73,11 @@
 }
 
 .fame-contact-form-box {
-  width: 560px;
-  height: 520px;
-  background: rgba(17, 13, 70, 0.82);
-  border-radius: 0 14px 14px 0;
-  padding: 42px 64px 36px;
+  width: 590px;
+  height: 540px;
+  background: rgba(18, 14, 73, 0.78);
+  border-radius: 12px;
+  padding: 42px 70px 34px;
   direction: rtl;
 }
 
@@ -80,7 +88,7 @@
 }
 
 .fame-form-group {
-  margin-bottom: 24px;
+  margin-bottom: 27px;
 }
 
 .fame-form-group label {
@@ -88,7 +96,7 @@
   color: #ffffff;
   font-size: 14px;
   font-weight: 800;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 8px;
   text-align: right;
 }
@@ -116,33 +124,32 @@
 }
 
 .fame-message-group {
+  margin-top: 3px;
   margin-bottom: 0;
+  flex: 1;
 }
 
 .fame-form-group textarea {
-  height: 95px;
+  height: 125px;
   resize: none;
   line-height: 1.7;
 }
 
 .fame-contact-btn {
   width: 105px;
-  height: 31px;
+  height: 30px;
   border: 0;
   border-radius: 999px;
   background: #c65b9e;
   color: #ffffff;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
   line-height: 1;
   cursor: pointer;
-  margin-top: auto;
-
-  /* يمين في RTL */
-  align-self: flex-start;
-
+  align-self: flex-end;
   transition: 0.25s ease;
+  margin-top: 22px;
 }
 
 .fame-contact-btn:hover {
@@ -150,195 +157,188 @@
   transform: translateY(-2px);
 }
 
-/* مهم: يخلي السكشن اللي بعد التواصل يظهر فوقه طبيعي */
-.fame-contact + * {
-  position: relative;
-  z-index: 2;
-  margin-top: 0;
-}
-
-/* Large screens */
-@media (min-width: 1400px) {
-  .fame-contact {
-    padding-top: 90px;
-    padding-bottom: 140px;
-  }
-
-  .fame-contact-container {
-    width: min(1140px, calc(100% - 80px));
-  }
-
-  .fame-contact-wrapper {
-    grid-template-columns: 420px 610px;
-  }
-
-  .fame-contact-image {
-    width: 420px;
-    height: 560px;
-  }
-
-  .fame-contact-form-box {
-    width: 610px;
-    height: 560px;
-    padding: 48px 72px 40px;
-  }
-}
-
 /* Laptop */
 @media (max-width: 1200px) {
   .fame-contact {
-    padding: 70px 0 110px;
+    padding: 44px 0 52px;
   }
 
   .fame-contact-container {
-    width: min(980px, calc(100% - 44px));
-  }
-
-  .fame-contact-wrapper {
-    grid-template-columns: 360px 530px;
-  }
-
-  .fame-contact-image {
-    width: 360px;
-    height: 500px;
-  }
-
-  .fame-contact-form-box {
-    width: 530px;
-    height: 500px;
-    padding: 38px 54px 34px;
+    width: min(960px, calc(100% - 40px));
   }
 
   .fame-contact-title {
-    margin-bottom: 55px;
+    margin-bottom: 52px;
+  }
+
+  .fame-contact-wrapper {
+    grid-template-columns: 350px 540px;
+  }
+
+  .fame-contact-image {
+    width: 350px;
+    height: 520px;
+  }
+
+  .fame-contact-form-box {
+    width: 540px;
+    height: 520px;
+    padding: 38px 58px 32px;
   }
 }
 
 /* Tablet */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .fame-contact {
-    padding: 95px 0 90px;
-    background-position: center top;
+    margin-top: -1px;
+    padding: 24px 0 34px;
+  }
+
+  .fame-contact::before {
+    background-size: cover;
+
+    /* مهم: ده اللي يخلي الخلفية تظهر خلف العنوان */
+    background-position: center 42%;
   }
 
   .fame-contact-container {
-    width: min(720px, calc(100% - 40px));
+    width: min(720px, calc(100% - 34px));
+    margin: 0 auto;
   }
 
   .fame-contact-title {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
     text-align: center;
-    font-size: 34px;
-    margin: 0 0 50px;
+    margin: 0 0 18px;
+    padding: 0;
+    background: transparent;
   }
 
   .fame-contact-wrapper {
-    display: flex;
-    flex-direction: column;
-    direction: rtl;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .fame-contact-image {
+    order: 1;
     width: 100%;
     height: 420px;
-    border-radius: 16px 16px 0 0;
+    border-radius: 12px;
+    margin: 0;
   }
 
   .fame-contact-image img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    object-position: center 28%;
+    object-position: center top;
   }
 
   .fame-contact-form-box {
+    order: 2;
     width: 100%;
     height: auto;
     min-height: auto;
-    border-radius: 0 0 16px 16px;
-    padding: 38px 42px 38px;
+    border-radius: 12px;
+    margin: 0;
+    padding: 30px 34px 30px;
   }
 
-  .fame-contact-btn {
-    margin-top: 22px;
-    align-self: flex-start;
+  .fame-contact-form {
+    height: auto;
+  }
+
+  .fame-message-group {
+    flex: unset;
+  }
+
+  .fame-form-group textarea {
+    height: 116px;
   }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   .fame-contact {
-    padding: 82px 0 75px;
-    background-position: center top;
+    margin-top: -1px;
+    padding: 18px 0 24px;
+  }
+
+  .fame-contact::before {
+    background-size: cover;
+
+    /* مهم جدًا */
+    background-position: center 38%;
   }
 
   .fame-contact-container {
-    width: calc(100% - 26px);
+    width: calc(100% - 28px);
   }
 
   .fame-contact-title {
-    font-size: 28px;
+    font-size: 25px;
     text-align: center;
-    margin: 0 0 42px;
+    margin: 0 0 14px;
+    padding: 0;
+    background: transparent;
   }
 
   .fame-contact-wrapper {
-    display: flex;
-    flex-direction: column;
+    gap: 12px;
   }
 
   .fame-contact-image {
     width: 100%;
-    height: 280px;
-    border-radius: 14px 14px 0 0;
+    height: 295px;
+    border-radius: 10px;
   }
 
   .fame-contact-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 24%;
+    object-position: center top;
   }
 
   .fame-contact-form-box {
     width: 100%;
-    height: auto;
-    border-radius: 0 0 14px 14px;
-    padding: 28px 22px 30px;
+    border-radius: 10px;
+    padding: 22px 20px 24px;
   }
 
   .fame-form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .fame-form-group label {
-    font-size: 13px;
-    margin-bottom: 7px;
+    font-size: 13.5px;
   }
 
   .fame-form-group input,
   .fame-form-group textarea {
-    font-size: 13px;
-    padding-bottom: 8px;
+    font-size: 14px;
   }
 
   .fame-form-group textarea {
-    height: 85px;
+    height: 104px;
   }
 
   .fame-contact-btn {
-    width: 92px;
+    width: 98px;
     height: 30px;
-    font-size: 14px;
-    margin-top: 18px;
-    align-self: flex-start;
+    font-size: 16px;
   }
 }
 
-/* Very small phones */
-@media (max-width: 390px) {
+/* Small Mobile */
+@media (max-width: 420px) {
   .fame-contact {
-    padding-top: 72px;
-    padding-bottom: 68px;
+    padding: 16px 0 20px;
+  }
+
+  .fame-contact::before {
+    background-position: center 36%;
   }
 
   .fame-contact-container {
@@ -346,31 +346,65 @@
   }
 
   .fame-contact-title {
-    font-size: 26px;
-    margin-bottom: 36px;
+    font-size: 23px;
+    margin-bottom: 12px;
   }
 
   .fame-contact-image {
-    height: 250px;
-  }
-
-  .fame-contact-image img {
-    object-position: center 22%;
+    height: 275px;
   }
 
   .fame-contact-form-box {
-    padding: 24px 18px 28px;
+    padding: 20px 17px 22px;
   }
 
   .fame-form-group {
-    margin-bottom: 18px;
+    margin-bottom: 17px;
+  }
+
+  .fame-form-group label {
+    font-size: 13px;
   }
 
   .fame-form-group textarea {
-    height: 78px;
+    height: 98px;
   }
 
   .fame-contact-btn {
-    align-self: flex-start;
+    width: 94px;
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 360px) {
+  .fame-contact {
+    padding: 14px 0 18px;
+  }
+
+  .fame-contact::before {
+    background-position: center 35%;
+  }
+
+  .fame-contact-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .fame-contact-image {
+    height: 255px;
+  }
+
+  .fame-contact-form-box {
+    padding: 18px 15px 20px;
+  }
+
+  .fame-form-group {
+    margin-bottom: 15px;
+  }
+
+  .fame-form-group label {
+    font-size: 12.5px;
   }
 }

@@ -1,4 +1,3 @@
-
 .stardom-section {
   position: relative;
   width: 100%;
@@ -6,7 +5,6 @@
   overflow: visible;
   font-family: "Cairo", sans-serif;
 
-  /* رفع السكشن كله عشان يقرب من جزء النيون اللي فوق */
   margin-top: -215px;
 
   z-index: 50;
@@ -17,7 +15,6 @@
   width: 100%;
   max-width: 900px;
 
-  /* ارتفاع متوازن بدون تمدد زيادة */
   height: 485px;
 
   margin: 0 auto;
@@ -25,14 +22,9 @@
   z-index: 2;
 }
 
-/* =========================
-   Star Image
-========================= */
-
 .stardom-star {
   position: absolute;
 
-  /* الصورة داخلة ناحية النص شوية وقريبة من مكان الـ PDF */
   left: 35px;
   top: 20px;
 
@@ -47,14 +39,9 @@
   user-select: none;
 }
 
-/* =========================
-   Text Block
-========================= */
-
 .stardom-text {
   position: absolute;
 
-  /* النص على اليمين وفي مستوى أقرب للـ PDF */
   right: 30px;
   top: 135px;
 
@@ -74,20 +61,15 @@
 .stardom-text p {
   margin: 0;
   color: #ffffff;
-  font-size: 9.4px;
+  font-size: 13px;
   font-weight: 800;
   line-height: 1.95;
 }
-
-/* =========================
-   Timeline
-========================= */
 
 .stardom-timeline {
   position: absolute;
   left: 50%;
 
-  /* رفع التايملاين وتقليله عشان يبقى أهدى وأقرب للأصل */
   bottom: 82px;
 
   width: 530px;
@@ -132,7 +114,7 @@
 
 .stardom-label {
   color: #ffffff;
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 900;
   line-height: 1;
   white-space: nowrap;
@@ -181,13 +163,6 @@
   justify-content: center;
 }
 
-/* =========================
-   Large Tablet
-========================= */
-/* =========================
-   Large Tablet
-========================= */
-
 @media (max-width: 992px) {
   .stardom-section {
     margin-top: -135px;
@@ -215,7 +190,7 @@
   }
 
   .stardom-text p {
-    font-size: 8.8px;
+    font-size: 11.5px;
     line-height: 1.9;
   }
 
@@ -226,12 +201,6 @@
     transform-origin: center;
   }
 }
-
-/* =========================
-   Tablet + Mobile Layout
-   هنا بنغير التصميم من absolute desktop
-   إلى ترتيب عمودي أنضف
-========================= */
 
 @media (max-width: 768px) {
   .stardom-section {
@@ -286,7 +255,7 @@
   }
 
   .stardom-text p {
-    font-size: 9px;
+    font-size: 11.5px;
     line-height: 1.9;
     font-weight: 800;
   }
@@ -306,13 +275,6 @@
     z-index: 45;
   }
 }
-
-/* =========================
-   Mobile
-========================= */
-/* =========================
-   Tablet Layout
-========================= */
 
 @media (max-width: 768px) {
   .stardom-section {
@@ -366,7 +328,7 @@
   }
 
   .stardom-text p {
-    font-size: 8.8px;
+    font-size: 11.5px;
     line-height: 1.85;
     font-weight: 800;
   }
@@ -386,10 +348,6 @@
     justify-content: space-between;
   }
 }
-
-/* =========================
-   Mobile Layout - Better Version
-========================= */
 
 @media (max-width: 576px) {
   .stardom-section {
@@ -417,11 +375,10 @@
   }
 
   .stardom-text p {
-    font-size: 8.2px;
+    font-size: 11px;
     line-height: 1.8;
   }
 
-  /* على الموبايل نخلي التايملاين Grid بدل خط طويل مضغوط */
   .stardom-timeline {
     position: relative;
     left: auto;
@@ -440,7 +397,6 @@
     direction: rtl;
   }
 
-  /* نخفي الخط الـ SVG على الموبايل لأنه بيكسر الشكل */
   .stardom-line {
     display: none;
   }
@@ -482,14 +438,10 @@
   }
 
   .stardom-label {
-    font-size: 8.3px;
+    font-size: 11px;
     line-height: 1.2;
   }
 }
-
-/* =========================
-   Small Mobile
-========================= */
 
 @media (max-width: 430px) {
   .stardom-container {
@@ -511,7 +463,7 @@
   }
 
   .stardom-text p {
-    font-size: 7.9px;
+    font-size: 10.5px;
     line-height: 1.75;
   }
 
@@ -532,13 +484,9 @@
   }
 
   .stardom-label {
-    font-size: 8px;
+    font-size: 10.5px;
   }
 }
-
-/* =========================
-   Very Small Mobile
-========================= */
 
 @media (max-width: 390px) {
   .stardom-star {
@@ -554,7 +502,7 @@
   }
 
   .stardom-text p {
-    font-size: 7.6px;
+    font-size: 10px;
   }
 
   .stardom-timeline {
@@ -567,6 +515,6 @@
   }
 
   .stardom-label {
-    font-size: 7.8px;
+    font-size: 10.5px;
   }
 }

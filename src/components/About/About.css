@@ -1,8 +1,5 @@
-/* ══════════════════════════════════════════════════════
-   About.css — FAME "من نحن"
-══════════════════════════════════════════════════════ */
 
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Bebas+Neue&display=swap");
+
 
 *,
 *::before,
@@ -12,10 +9,9 @@
 
 #about,
 #about * {
-  font-family: "Cairo", "Tajawal", "Noto Kufi Arabic", sans-serif;
+  font-family: "Cairo";
 }
 
-/* SECTION */
 .about-section {
   position: relative;
   width: 100%;
@@ -26,7 +22,7 @@
   z-index: 2;
 }
 
-/* Top overlay */
+
 .about-bg-overlay {
   position: absolute;
   top: 0;
@@ -39,7 +35,7 @@
   opacity: 1;
 }
 
-/* Main wrapper */
+
 .about-inner {
   position: relative;
   z-index: 2;
@@ -50,7 +46,7 @@
   margin: 0 auto;
 }
 
-/* LEFT IMAGE */
+
 .about-image-col {
   position: relative;
   flex: 0 0 57%;
@@ -83,7 +79,7 @@
   }
 }
 
-/* Fade between image and background */
+
 .about-fade-h {
   position: absolute;
   top: 0;
@@ -95,7 +91,7 @@
   z-index: 2;
 }
 
-/* Bottom fade */
+
 .about-fade-b {
   position: absolute;
   bottom: 0;
@@ -107,14 +103,14 @@
   z-index: 2;
 }
 
-/* RIGHT TEXT AREA */
+
 .about-text-col {
   position: relative;
   flex: 0 0 43%;
   height: 100%;
 }
 
-/* Glow — moved lower + slightly to the right */
+
 .about-glow {
   position: absolute;
   width: 540px;
@@ -142,7 +138,6 @@
   }
 }
 
-/* Text block */
 .about-who,
 .about-fame,
 .about-body,
@@ -154,7 +149,7 @@
   transform: none;
 }
 
-/* من نحن */
+
 .about-who {
   top: 122px;
   margin: 0;
@@ -165,11 +160,11 @@
   line-height: 1;
 }
 
-/* FAME */
+
 .about-fame {
   top: 260px;
   margin: 0;
-  font-family: "Bebas Neue", "Arial Black", sans-serif;
+font-family: 'cairo';
   font-size: 60px;
   font-weight: 900;
   line-height: 0.95;
@@ -181,20 +176,20 @@
     0 0 65px rgba(200, 120, 255, 0.28);
 }
 
-/* Body Text */
 .about-body {
   top: 325px;
   max-width: 330px;
   margin: 0;
-  font-size: 13px;
   font-weight: 700;
-  line-height: 1.75;
   color: rgba(255, 255, 255, 0.94);
   text-align: right;
   direction: rtl;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+    line-height: 1.68;
 }
 
-/* Button */
+
 .about-btn {
   top: 430px;
   height: 37px;
@@ -251,7 +246,6 @@
   transform: translateX(130%);
 }
 
-/* Large screens */
 @media (min-width: 1440px) {
   .about-inner {
     max-width: 1240px;
@@ -278,7 +272,6 @@
   }
 }
 
-/* Laptop */
 @media (max-width: 1280px) {
   .about-inner {
     max-width: 1120px;
@@ -310,7 +303,6 @@
   }
 }
 
-/* Small laptop */
 @media (max-width: 1150px) {
   .about-chair {
     left: -105px;
@@ -414,7 +406,6 @@
   }
 }
 
-/* Mobile + small tablet */
 @media (max-width: 768px) {
   .about-section {
     height: auto;
@@ -506,7 +497,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .about-section {
     margin-top: -28px;
@@ -548,7 +538,6 @@
   }
 }
 
-/* Very small mobile */
 @media (max-width: 360px) {
   .about-section {
     margin-top: -24px;

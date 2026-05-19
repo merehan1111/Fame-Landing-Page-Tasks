@@ -24,7 +24,6 @@ export default function ClientsSection() {
       />
 
       <div className="fame-clients-container">
-        {/* عملاؤنا */}
         <div className="clients-main-area">
           <h2 className="fame-clients-title">عملاؤنا</h2>
 
@@ -39,7 +38,6 @@ export default function ClientsSection() {
           </button>
         </div>
 
-        {/* حلفاؤنا */}
         <div className="fame-allies-area">
           <h2 className="fame-allies-title">حلفاؤنا</h2>
 
