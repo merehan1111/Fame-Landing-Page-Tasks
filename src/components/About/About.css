@@ -9,8 +9,7 @@
 
 #about,
 #about * {
-  font-family: "CairoCustom", "Cairo", sans-serif;
-}
+    font-family: "CairoCustom", sans-serif;}
 
 .about-section {
   position: relative;
@@ -164,8 +163,7 @@
 .about-fame {
   top: 260px;
   margin: 0;
-font-family: "CairoCustom", "Cairo", sans-serif;
-  font-size: 60px;
+  font-family: "CairoCustom", sans-serif;  font-size: 60px;
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: 3.5px;
@@ -204,8 +202,7 @@ font-family: "CairoCustom", "Cairo", sans-serif;
   );
   border-radius: 8px;
   border: 1px solid rgba(240, 180, 220, 0.5);
- font-family: "CairoCustom", "Cairo", sans-serif;
-
+   font-family: "CairoCustom", sans-serif;
   font-size: 13.5px;
   font-weight: 800;
   color: #262053;
@@ -572,5 +569,281 @@ font-family: "CairoCustom", "Cairo", sans-serif;
   .about-btn {
     width: min(215px, 100%);
     height: 33px;
+  }
+}
+
+
+
+   /*  About Animation */
+
+
+.about-section {
+  animation: about-section-start 0.8s ease-out both;
+}
+
+.about-bg-overlay {
+  animation: about-bg-drop 1.2s ease-out both;
+}
+
+.about-image-col {
+  animation: about-left-mask 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.about-chair {
+  animation:
+    about-chair-big-enter 1.35s cubic-bezier(0.16, 1, 0.3, 1) both,
+    chair-float 5.5s ease-in-out 1.35s infinite !important;
+}
+
+.about-glow {
+  animation:
+    about-glow-big-enter 1.1s ease-out both,
+    about-glow-strong-pulse 3.8s ease-in-out 1.1s infinite !important;
+}
+
+.about-who {
+  animation: about-text-from-right 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.about-fame {
+  animation: about-title-pop 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
+}
+
+.about-body {
+  animation: about-text-from-right 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.68s both;
+}
+
+.about-btn {
+  animation: about-button-pop 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+
+.about-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 28%,
+    rgba(255, 255, 255, 0.7) 50%,
+    transparent 72%,
+    transparent 100%
+  );
+  transform: translateX(-140%);
+  animation: about-btn-shine 3s ease-in-out 1.7s infinite;
+  pointer-events: none;
+}
+
+.about-btn:hover {
+  transform: translateY(-3px) scale(1.035);
+}
+
+
+@keyframes about-section-start {
+  from {
+    opacity: 0.85;
+    filter: saturate(0.85);
+  }
+
+  to {
+    opacity: 1;
+    filter: saturate(1);
+  }
+}
+
+@keyframes about-bg-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-45px) scale(1.03);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes about-left-mask {
+  from {
+    opacity: 0;
+    clip-path: inset(0 38% 0 0);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes about-chair-big-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-120px) translateY(35px) scale(1.08);
+    filter: blur(12px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateX(8px) translateY(-4px) scale(1.01);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 0.96;
+    transform: translateX(0) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes about-glow-big-enter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.45) rotate(-12deg);
+    filter: blur(18px);
+  }
+
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes about-glow-strong-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.11);
+  }
+}
+
+@keyframes about-text-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(70px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes about-title-pop {
+  from {
+    opacity: 0;
+    transform: translateX(80px) scale(0.88);
+    filter: blur(8px);
+    text-shadow: none;
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-4px) scale(1.04);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes about-button-pop {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.82);
+    filter: blur(7px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.04);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes about-btn-shine {
+  0% {
+    transform: translateX(-140%);
+  }
+
+  35% {
+    transform: translateX(140%);
+  }
+
+  100% {
+    transform: translateX(140%);
+  }
+}
+
+.about-bg-overlay,
+.about-image-col,
+.about-chair,
+.about-glow,
+.about-who,
+.about-fame,
+.about-body,
+.about-btn {
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .about-who,
+  .about-fame,
+  .about-body {
+    animation-name: about-mobile-text-up;
+  }
+
+  .about-glow {
+    animation:
+      about-glow-big-enter 1s ease-out both,
+      about-glow-strong-pulse 4s ease-in-out 1s infinite !important;
+  }
+}
+
+@keyframes about-mobile-text-up {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-section,
+  .about-bg-overlay,
+  .about-image-col,
+  .about-chair,
+  .about-glow,
+  .about-who,
+  .about-fame,
+  .about-body,
+  .about-btn,
+  .about-btn::before {
+    animation: none !important;
+    transition: none !important;
   }
 }

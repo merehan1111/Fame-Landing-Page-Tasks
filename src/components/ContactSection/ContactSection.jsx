@@ -1,11 +1,37 @@
+import { useEffect, useRef } from "react";
 import "./ContactSection.css";
 import contactPerson from "../../assets/2x/contactperson.png";
 import linesBg from "../../assets/2x/contactus.png";
 
 export default function ContactSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("contact-in-view");
+          observer.unobserve(section);
+        }
+      },
+      {
+        threshold: 0.22,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
-      className="fame-contact"
+      ref={sectionRef}
+      className="fame-contact contact-animate"
       dir="rtl"
       style={{ "--contact-bg": `url(${linesBg})` }}
     >

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import "./AudienceSection.css";
 
 import personImage from "../../assets/SVG/Asset 22.svg";
@@ -6,8 +7,32 @@ import sectionBg from "../../assets/SVG/Asset 19.svg";
 import { Star, Building2 } from "lucide-react";
 
 export default function AudienceSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("audience-in-view");
+          observer.unobserve(section);
+        }
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="audience-section" dir="rtl">
+    <section ref={sectionRef} className="audience-section audience-animate" dir="rtl">
       <img
         src={sectionBg}
         alt=""
@@ -30,7 +55,7 @@ export default function AudienceSection() {
           </div>
 
           <div className="audience-cards">
-            <div className="audience-card">
+            <div className="audience-card audience-card-one">
               <div className="audience-card-text">
                 <h3>المشاهير</h3>
                 <p>نحو حضور، مسار واضح وفرص مدروسة</p>
@@ -41,7 +66,7 @@ export default function AudienceSection() {
               </div>
             </div>
 
-            <div className="audience-card">
+            <div className="audience-card audience-card-two">
               <div className="audience-card-text">
                 <h3>الشركات / الجهات</h3>
                 <p>ندعمك للظهور، حضور قوي، صيت ونتائج قابلة للقياس</p>

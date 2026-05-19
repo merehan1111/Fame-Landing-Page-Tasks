@@ -10,8 +10,7 @@
 .fame-services-section,
 .fame-services-section * {
 
-  font-family: "CairoCustom", "Cairo", sans-serif;
-
+    font-family: "CairoCustom", sans-serif;
 }
 
 .fame-services-section {
@@ -653,5 +652,188 @@
     width: 100%;
     height: auto;
     min-height: 96px;
+  }
+}
+
+/* animation */
+
+.services-animate .fame-services-star,
+.services-animate .fame-services-title,
+.services-animate .fame-services-cards,
+.services-animate .fame-service-card {
+  opacity: 0;
+}
+
+.services-animate.services-in-view .fame-services-star {
+  animation: services-star-show 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.services-animate.services-in-view .fame-services-light {
+  animation:
+    services-light-show 0.9s ease-out both,
+    servicesLightPulse 5.2s ease-in-out 0.9s infinite;
+}
+
+.services-animate.services-in-view .fame-services-title {
+  animation: services-title-show 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.services-animate.services-in-view .fame-services-cards {
+  animation: services-cards-show 0.6s ease-out 0.35s both;
+}
+
+.services-animate.services-in-view .fame-service-card {
+  animation: services-card-show 0.85s cubic-bezier(0.16, 1, 0.3, 1) calc(0.5s + var(--service-delay)) both;
+}
+
+.services-animate.services-in-view .fame-service-icon {
+  animation: services-icon-float 3s ease-in-out 1.5s infinite;
+}
+
+.services-animate.services-in-view .fame-service-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+@keyframes services-star-show {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(70px) scale(1.12);
+    filter: blur(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes services-light-show {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.25);
+    filter: blur(22px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.18);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: translateX(-50%) scale(1);
+    filter: blur(7px);
+  }
+}
+
+@keyframes services-title-show {
+  from {
+    opacity: 0;
+    transform: translateX(70px) scale(0.92);
+    filter: blur(10px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-5px) scale(1.03);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes services-cards-show {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes services-card-show {
+  from {
+    opacity: 0;
+    transform: translateY(65px) scale(0.82);
+    filter: blur(12px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.04);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes services-icon-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(3deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-animate.services-in-view .fame-services-cards {
+    animation: services-mobile-cards-show 0.6s ease-out 0.35s both;
+  }
+
+  .services-animate.services-in-view .fame-service-card {
+    animation-name: services-mobile-card-show;
+  }
+}
+
+@keyframes services-mobile-cards-show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes services-mobile-card-show {
+  from {
+    opacity: 0;
+    transform: translateY(45px) scale(0.9);
+    filter: blur(9px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-animate .fame-services-star,
+  .services-animate .fame-services-title,
+  .services-animate .fame-services-cards,
+  .services-animate .fame-service-card,
+  .services-animate .fame-services-light,
+  .services-animate .fame-service-icon {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

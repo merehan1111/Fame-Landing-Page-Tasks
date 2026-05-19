@@ -1,11 +1,13 @@
 import heroBg from "../../assets/2x/Asset 8@2x.png";
 import pinkButton from "../../assets/SVG/Asset 6.svg";
 import whiteButton from "../../assets/SVG/Asset 7.svg";
+import "./Hero.css";
 
 export default function Hero() {
   return (
     <section
       className="
+        hero-section
         relative h-[686px] w-full overflow-hidden bg-[#262053]
 
         max-lg:h-[650px]
@@ -17,6 +19,7 @@ export default function Hero() {
         src={heroBg}
         alt="Fame Hero"
         className="
+          hero-bg
           absolute inset-0 h-full w-full object-fill
 
           max-lg:object-cover max-lg:object-[35%_center]
@@ -25,10 +28,11 @@ export default function Hero() {
         "
       />
 
-      <div className="absolute inset-0 bg-black/5" />
+      <div className="hero-dark-layer absolute inset-0 bg-black/5" />
 
       <div
         className="
+          hero-main-text
           absolute left-1/2 top-[155px] z-10
           w-full -translate-x-1/2 px-5 text-center
 
@@ -40,6 +44,7 @@ export default function Hero() {
         <h1
           dir="ltr"
           className="
+            hero-title
             whitespace-nowrap text-[39px] font-extrabold
             leading-none tracking-[2px] text-white
 
@@ -55,6 +60,7 @@ export default function Hero() {
         <p
           dir="ltr"
           className="
+            hero-subtitle
             mt-[18px] text-[18px] font-medium leading-none text-white
 
             max-xl:text-[17px]
@@ -71,6 +77,7 @@ export default function Hero() {
       <div
         dir="rtl"
         className="
+          hero-arabic-box
           absolute right-[7.8%] top-[380px] z-20
           w-[500px] text-center
 
@@ -82,6 +89,7 @@ export default function Hero() {
       >
         <p
           className="
+            hero-arabic-text
             mb-[22px] text-[19px] font-bold leading-[1.65] text-white
 
             max-lg:text-[17px]
@@ -96,6 +104,7 @@ export default function Hero() {
 
         <div
           className="
+            hero-buttons
             flex items-center justify-center gap-[16px]
 
             max-sm:flex-col max-sm:gap-3
@@ -104,6 +113,7 @@ export default function Hero() {
           <a
             href="#"
             className="
+              hero-btn hero-btn-pink
               block h-[44px] w-[180px] overflow-hidden rounded-[10px]
 
               max-md:h-[44px] max-md:w-[180px]
@@ -120,6 +130,7 @@ export default function Hero() {
           <a
             href="#"
             className="
+              hero-btn hero-btn-white
               block h-[44px] w-[180px] overflow-hidden rounded-[10px]
 
               max-md:h-[44px] max-md:w-[180px]

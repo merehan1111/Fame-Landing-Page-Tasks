@@ -24,8 +24,7 @@ body {
   overflow-y: auto;
   background: #262053;
   color: #ffffff;
-font-family: "CairoCustom", "Cairo", sans-serif;
-}
+  font-family: "CairoCustom", sans-serif;}
 
 #root {
   overflow: visible;

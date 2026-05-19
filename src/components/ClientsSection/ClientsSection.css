@@ -75,8 +75,7 @@
   margin: 36px auto 0;
   background: linear-gradient(90deg, #b84f99 0%, #6b2b76 100%);
   color: #ffffff;
-font-family: "CairoCustom", "Cairo", sans-serif;
-  font-size: 20px;
+  font-family: "CairoCustom", sans-serif;  font-size: 20px;
   font-weight: 800;
   cursor: pointer;
   line-height: 1;
@@ -375,5 +374,372 @@ font-family: "CairoCustom", "Cairo", sans-serif;
   .fame-allies-title {
     font-size: 23px;
     text-align: center;
+  }
+}
+
+.clients-animate .clients-arc-shape,
+.clients-animate .clients-glow-shape,
+.clients-animate .fame-clients-title,
+.clients-animate .fame-client-card,
+.clients-animate .fame-clients-btn,
+.clients-animate .fame-allies-title,
+.clients-animate .fame-ally-card,
+.clients-animate .allies-arrow {
+  opacity: 0;
+}
+
+.clients-animate.clients-in-view .clients-arc-shape {
+  animation: clients-arc-sweep 1.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.clients-animate.clients-in-view .clients-glow-shape {
+  animation:
+    clients-glow-show 1s ease-out 0.18s both,
+    clients-glow-drift 5.5s ease-in-out 1.2s infinite;
+}
+
+.clients-animate.clients-in-view .fame-clients-title {
+  animation: clients-title-reveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.clients-animate.clients-in-view .fame-client-card {
+  animation: client-card-flip 0.72s cubic-bezier(0.16, 1, 0.3, 1) var(--client-delay) both;
+}
+
+.clients-animate.clients-in-view .fame-clients-btn {
+  animation: clients-btn-show 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.08s both;
+}
+
+.clients-animate.clients-in-view .fame-allies-title {
+  animation: allies-title-reveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.12s both;
+}
+
+.clients-animate.clients-in-view .fame-ally-card {
+  animation: ally-card-slide 0.78s cubic-bezier(0.16, 1, 0.3, 1) var(--ally-delay) both;
+}
+
+.clients-animate.clients-in-view .allies-arrow {
+  animation: allies-arrow-show 0.65s ease-out 1.38s both;
+}
+
+.clients-animate.clients-in-view .allies-arrow-left {
+  animation:
+    allies-arrow-show 0.65s ease-out 1.38s both,
+    allies-arrow-left-move 1.9s ease-in-out 2s infinite;
+}
+
+.clients-animate.clients-in-view .allies-arrow-right {
+  animation:
+    allies-arrow-show 0.65s ease-out 1.38s both,
+    allies-arrow-right-move 1.9s ease-in-out 2s infinite;
+}
+
+.fame-client-card,
+.fame-ally-card,
+.fame-clients-btn,
+.allies-arrow {
+  transition:
+    transform 0.28s ease,
+    filter 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.fame-client-card:hover {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 18px 34px rgba(20, 10, 55, 0.2);
+}
+
+.fame-ally-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(20, 10, 55, 0.18);
+}
+
+.fame-clients-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.fame-clients-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 70%,
+    transparent 100%
+  );
+  opacity: 0;
+  transform: translateX(140%);
+}
+
+.clients-animate.clients-in-view .fame-clients-btn::after {
+  animation: clients-btn-shine 3.2s ease-in-out 1.65s infinite;
+}
+
+.fame-clients-btn:hover {
+  transform: translateY(-3px) scale(1.025);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 28px rgba(20, 10, 55, 0.22);
+}
+
+@keyframes clients-arc-sweep {
+  from {
+    opacity: 0;
+    transform: translateX(-80px) rotate(-4deg) scale(1.04);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 0.52;
+    transform: translateX(0) rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes clients-glow-show {
+  from {
+    opacity: 0;
+    transform: scale(0.78);
+    filter: blur(12px);
+  }
+
+  to {
+    opacity: 0.82;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes clients-glow-drift {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.04);
+  }
+}
+
+@keyframes clients-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(42px);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes client-card-flip {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(24deg) translateY(34px) scale(0.94);
+    filter: blur(7px);
+  }
+
+  72% {
+    opacity: 1;
+    transform: perspective(900px) rotateX(-4deg) translateY(-5px) scale(1.015);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(900px) rotateX(0deg) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes clients-btn-show {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.9);
+    filter: blur(5px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.04);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes allies-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(38px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes ally-card-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-45px) skewX(5deg);
+    filter: blur(7px);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateX(5px) skewX(-1deg);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) skewX(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes allies-arrow-show {
+  from {
+    opacity: 0;
+    transform: scale(0.65);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes allies-arrow-left-move {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-6px);
+  }
+}
+
+@keyframes allies-arrow-right-move {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes clients-btn-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(140%);
+  }
+
+  18% {
+    opacity: 0.8;
+  }
+
+  38% {
+    opacity: 0;
+    transform: translateX(-140%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-140%);
+  }
+}
+
+@media (max-width: 900px) {
+  .clients-animate.clients-in-view .fame-client-card {
+    animation-name: client-card-mobile-show;
+  }
+
+  .clients-animate.clients-in-view .fame-ally-card {
+    animation-name: ally-card-mobile-show;
+  }
+
+  .clients-animate.clients-in-view .fame-clients-title,
+  .clients-animate.clients-in-view .fame-allies-title {
+    animation-name: clients-mobile-title-show;
+  }
+}
+
+@keyframes client-card-mobile-show {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes ally-card-mobile-show {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes clients-mobile-title-show {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-animate .clients-arc-shape,
+  .clients-animate .clients-glow-shape,
+  .clients-animate .fame-clients-title,
+  .clients-animate .fame-client-card,
+  .clients-animate .fame-clients-btn,
+  .clients-animate .fame-clients-btn::after,
+  .clients-animate .fame-allies-title,
+  .clients-animate .fame-ally-card,
+  .clients-animate .allies-arrow {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

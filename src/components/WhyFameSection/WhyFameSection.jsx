@@ -1,10 +1,8 @@
+import { useEffect, useRef } from "react";
 import "./WhyFameSection.css";
 
-import bgImage  from "../../assets/SVG/Asset 19.svg";
-
+import bgImage from "../../assets/SVG/Asset 19.svg";
 import starRobot from "../../assets/SVG/Asset 24.svg";
-
-
 
 import cardProfessional from "../../assets/SVG/Asset 30.svg";
 import cardIndependence from "../../assets/SVG/Asset 29.svg";
@@ -13,9 +11,32 @@ import cardData from "../../assets/SVG/Asset 27.svg";
 import cardAI from "../../assets/SVG/Asset 31.svg";
 
 export default function WhyFameSection() {
-  return (
-    <section className="why-fame-section" dir="rtl">
+  const sectionRef = useRef(null);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("why-fame-in-view");
+          observer.unobserve(section);
+        }
+      },
+      {
+        threshold: 0.24,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="why-fame-section why-fame-animate" dir="rtl">
       <img
         src={bgImage}
         alt=""

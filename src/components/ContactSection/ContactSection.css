@@ -111,8 +111,7 @@
   background: transparent;
   color: #ffffff;
   outline: none;
-  font-family: "CairoCustom", "Cairo", sans-serif;
-  font-size: 14px;
+    font-family: "CairoCustom", sans-serif;  font-size: 14px;
   font-weight: 600;
   padding: 0 0 10px;
   text-align: right;
@@ -143,14 +142,17 @@
   border-radius: 999px;
   background: #c65b9e;
   color: #ffffff;
-  font-family: "CairoCustom", "Cairo", sans-serif;
-  font-size: 17px;
+    font-family: "CairoCustom", sans-serif;  font-size: 17px;
   font-weight: 800;
   line-height: 1;
   cursor: pointer;
   align-self: flex-end;
   transition: 0.25s ease;
   margin-top: 24px;
+        padding: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fame-contact-btn:hover {
@@ -331,6 +333,10 @@
     height: 31px;
     font-size: 16px;
     margin-top: 20px;
+          padding: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -373,6 +379,10 @@
     width: 96px;
     height: 30px;
     font-size: 15px;
+        padding: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -401,5 +411,303 @@
 
   .fame-form-group label {
     font-size: 12.5px;
+  }
+}
+
+
+.contact-animate .fame-contact-title,
+.contact-animate .fame-contact-image,
+.contact-animate .fame-contact-form-box,
+.contact-animate .fame-form-group,
+.contact-animate .fame-contact-btn {
+  opacity: 0;
+}
+
+.contact-animate.contact-in-view::before {
+  animation: contact-bg-focus 1.25s ease-out both;
+}
+
+.contact-animate.contact-in-view .fame-contact-title {
+  animation: contact-title-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.contact-animate.contact-in-view .fame-contact-image {
+  animation: contact-image-curtain 1s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+.contact-animate.contact-in-view .fame-contact-image img {
+  animation: contact-person-motion 4.6s ease-in-out 1.35s infinite;
+}
+
+.contact-animate.contact-in-view .fame-contact-form-box {
+  animation: contact-form-glass 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+}
+
+.contact-animate.contact-in-view .fame-form-group:nth-child(1) {
+  animation: contact-field-draw 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both;
+}
+
+.contact-animate.contact-in-view .fame-form-group:nth-child(2) {
+  animation: contact-field-draw 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.84s both;
+}
+
+.contact-animate.contact-in-view .fame-form-group:nth-child(3) {
+  animation: contact-field-draw 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.96s both;
+}
+
+.contact-animate.contact-in-view .fame-form-group:nth-child(4) {
+  animation: contact-field-draw 0.65s cubic-bezier(0.16, 1, 0.3, 1) 1.08s both;
+}
+
+.contact-animate.contact-in-view .fame-contact-btn {
+  animation: contact-btn-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.22s both;
+}
+
+.contact-animate.contact-in-view .fame-form-group input,
+.contact-animate.contact-in-view .fame-form-group textarea {
+  background-image: linear-gradient(#cf4ca1, #cf4ca1);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  animation: contact-input-line 0.85s ease-out 1.05s both;
+}
+
+.fame-contact-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.fame-contact-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 28%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 72%,
+    transparent 100%
+  );
+  transform: translateX(140%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-animate.contact-in-view .fame-contact-btn::after {
+  animation: contact-btn-shine 3.1s ease-in-out 1.8s infinite;
+}
+
+.fame-contact-form-box:focus-within {
+  box-shadow:
+    0 0 0 1px rgba(207, 76, 161, 0.28),
+    0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+@keyframes contact-bg-focus {
+  from {
+    opacity: 0;
+    filter: blur(8px) saturate(0.82);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+  }
+}
+
+@keyframes contact-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-28px);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes contact-image-curtain {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 0 100%);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes contact-person-motion {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes contact-form-glass {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateY(-14deg) translateX(46px);
+    filter: blur(8px);
+  }
+
+  72% {
+    opacity: 1;
+    transform: perspective(900px) rotateY(3deg) translateX(-4px);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(900px) rotateY(0deg) translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes contact-field-draw {
+  from {
+    opacity: 0;
+    transform: translateX(34px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes contact-input-line {
+  from {
+    background-size: 0% 1.5px;
+  }
+
+  to {
+    background-size: 100% 1.5px;
+  }
+}
+
+@keyframes contact-btn-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.9);
+    filter: blur(5px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.04);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes contact-btn-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(140%);
+  }
+
+  18% {
+    opacity: 0.85;
+  }
+
+  38% {
+    opacity: 0;
+    transform: translateX(-140%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-140%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-animate.contact-in-view .fame-contact-image {
+    animation-name: contact-mobile-image-show;
+  }
+
+  .contact-animate.contact-in-view .fame-contact-form-box {
+    animation-name: contact-mobile-form-show;
+  }
+
+  .contact-animate.contact-in-view .fame-form-group {
+    animation-name: contact-mobile-field-show;
+  }
+}
+
+@keyframes contact-mobile-image-show {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes contact-mobile-form-show {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes contact-mobile-field-show {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-animate .fame-contact-title,
+  .contact-animate .fame-contact-image,
+  .contact-animate .fame-contact-image img,
+  .contact-animate .fame-contact-form-box,
+  .contact-animate .fame-form-group,
+  .contact-animate .fame-contact-btn,
+  .contact-animate .fame-contact-btn::after,
+  .contact-animate.contact-in-view::before {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

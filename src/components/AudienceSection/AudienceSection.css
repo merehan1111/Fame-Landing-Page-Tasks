@@ -5,8 +5,7 @@
   min-height: 600px;
   margin-top: -45px;
   overflow: hidden;
-  font-family: "CairoCustom", "Cairo", sans-serif;
-
+    font-family: "CairoCustom", sans-serif;
   background: #262053;
   z-index: 20;
 }
@@ -540,5 +539,243 @@
   .audience-card-icon svg {
     width: 25px;
     height: 25px;
+  }
+}
+
+/* animation */
+
+.audience-animate .audience-bg,
+.audience-animate .audience-title,
+.audience-animate .audience-person-wrap,
+.audience-animate .audience-card {
+  opacity: 0;
+}
+
+.audience-animate.audience-in-view .audience-bg {
+  animation: audience-bg-show 1.2s ease-out both;
+}
+
+.audience-animate.audience-in-view .audience-title {
+  animation: audience-title-show 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.audience-animate.audience-in-view .audience-person-wrap {
+  animation: audience-person-wrap-show 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.audience-animate.audience-in-view .audience-person {
+  animation: audience-person-breathe 4.2s ease-in-out 1.35s infinite;
+}
+
+.audience-animate.audience-in-view .audience-glow {
+  animation: audience-glow-show 0.95s ease-out 0.42s both, audience-glow-pulse 3.2s ease-in-out 1.3s infinite;
+}
+
+.audience-animate.audience-in-view .audience-card-one {
+  animation: audience-card-swing-show 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.62s both;
+}
+
+.audience-animate.audience-in-view .audience-card-two {
+  animation: audience-card-swing-show 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.82s both;
+}
+
+.audience-animate.audience-in-view .audience-card-icon svg {
+  animation: audience-icon-pop 2.8s ease-in-out 1.6s infinite;
+}
+
+.audience-animate.audience-in-view .audience-card:hover {
+  transform: translateX(-5px) scale(1.025);
+}
+
+.audience-animate.audience-in-view .audience-card:hover .audience-card-icon svg {
+  animation-play-state: paused;
+  transform: scale(1.08) rotate(-6deg);
+}
+
+@keyframes audience-bg-show {
+  from {
+    opacity: 0;
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes audience-title-show {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes audience-person-wrap-show {
+  from {
+    opacity: 0;
+    transform: translateX(-55px);
+    clip-path: inset(0 0 0 58%);
+    filter: blur(9px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes audience-person-breathe {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-7px);
+  }
+}
+
+@keyframes audience-glow-show {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.45);
+    filter: blur(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    filter: blur(10px);
+  }
+}
+
+@keyframes audience-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+@keyframes audience-card-swing-show {
+  from {
+    opacity: 0;
+    transform: perspective(700px) rotateY(-22deg) translateX(55px) scale(0.94);
+    filter: blur(8px);
+  }
+
+  72% {
+    opacity: 1;
+    transform: perspective(700px) rotateY(4deg) translateX(-4px) scale(1.015);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(700px) rotateY(0deg) translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes audience-icon-pop {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  45% {
+    transform: scale(1.08) rotate(-5deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .audience-animate.audience-in-view .audience-title {
+    animation-name: audience-mobile-up;
+  }
+
+  .audience-animate.audience-in-view .audience-person-wrap {
+    animation-name: audience-mobile-person-show;
+  }
+
+  .audience-animate.audience-in-view .audience-card-one,
+  .audience-animate.audience-in-view .audience-card-two {
+    animation-name: audience-mobile-card-show;
+  }
+
+  .audience-animate.audience-in-view .audience-card:hover {
+    transform: translateY(-4px) scale(1.015);
+  }
+}
+
+@keyframes audience-mobile-up {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes audience-mobile-person-show {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+    clip-path: inset(22% 0 0 0);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+}
+
+@keyframes audience-mobile-card-show {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.94);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .audience-animate .audience-bg,
+  .audience-animate .audience-title,
+  .audience-animate .audience-person-wrap,
+  .audience-animate .audience-person,
+  .audience-animate .audience-glow,
+  .audience-animate .audience-card,
+  .audience-animate .audience-card-icon svg {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

@@ -87,8 +87,7 @@
 
   color: #ffffff;
   text-decoration: none;
-font-family: "CairoCustom", "Cairo", sans-serif;
-  font-size: 27px;
+  font-family: "CairoCustom", sans-serif;  font-size: 27px;
   font-weight: 900;
   line-height: 1;
 }
@@ -186,5 +185,194 @@ font-family: "CairoCustom", "Cairo", sans-serif;
     width: 80px;
     top: -46px;
     left: 62%;
+  }
+}
+
+
+/* animation */
+.join-animate .join-banner-img,
+.join-animate .join-star,
+.join-animate .join-btn {
+  opacity: 0;
+}
+
+.join-animate.join-in-view .join-banner-img {
+  animation: join-bg-show 1.15s ease-out both;
+}
+
+.join-animate.join-in-view .join-star {
+  animation:
+    join-star-drop 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both,
+    join-star-hover 3.8s ease-in-out 1.2s infinite;
+}
+
+.join-animate.join-in-view .join-btn {
+  animation: join-btn-slide-show 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+}
+
+.join-animate.join-in-view .join-btn-arrow {
+  animation: join-arrow-move 1.7s ease-in-out 1.25s infinite;
+}
+
+.join-btn {
+  transition:
+    transform 0.28s ease,
+    filter 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.join-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    transparent 28%,
+    rgba(255, 255, 255, 0.42) 50%,
+    transparent 72%,
+    transparent 100%
+  );
+  transform: translateX(140%);
+  opacity: 0;
+}
+
+.join-animate.join-in-view .join-btn::before {
+  animation: join-btn-light 3.2s ease-in-out 1.45s infinite;
+}
+
+.join-btn:hover {
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.025);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 34px rgba(25, 14, 70, 0.28);
+}
+
+@keyframes join-bg-show {
+  from {
+    opacity: 0;
+    filter: blur(8px) saturate(0.8);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+  }
+}
+
+@keyframes join-star-drop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-55px) rotate(-18deg) scale(0.65);
+    filter: blur(10px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(8px) rotate(5deg) scale(1.08);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes join-star-hover {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-7px) rotate(3deg);
+  }
+}
+
+@keyframes join-btn-slide-show {
+  from {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.92);
+    filter: blur(8px);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translateX(6px) scale(1.035);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes join-arrow-move {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-7px);
+  }
+}
+
+@keyframes join-btn-light {
+  0% {
+    opacity: 0;
+    transform: translateX(140%);
+  }
+
+  18% {
+    opacity: 0.8;
+  }
+
+  38% {
+    opacity: 0;
+    transform: translateX(-140%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-140%);
+  }
+}
+
+@media (max-width: 600px) {
+  .join-animate.join-in-view .join-btn {
+    animation-name: join-btn-mobile-show;
+  }
+}
+
+@keyframes join-btn-mobile-show {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.92);
+    filter: blur(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .join-animate .join-banner-img,
+  .join-animate .join-star,
+  .join-animate .join-btn,
+  .join-animate .join-btn-arrow,
+  .join-animate .join-btn::before {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

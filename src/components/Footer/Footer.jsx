@@ -1,10 +1,35 @@
+import { useEffect, useRef } from "react";
 import "./Footer.css";
 import logo from "../../assets/2x/logo.png";
 import logo2 from "../../assets/2x/share-logo.png";
 
 export default function Footer() {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const footer = footerRef.current;
+
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          footer.classList.add("footer-in-view");
+          observer.unobserve(footer);
+        }
+      },
+      {
+        threshold: 0.22,
+      }
+    );
+
+    observer.observe(footer);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="fame-footer" dir="rtl">
+    <footer ref={footerRef} className="fame-footer footer-animate" dir="rtl">
       <div className="fame-footer-container">
         <div className="footer-line" />
 
@@ -66,8 +91,8 @@ export default function Footer() {
             <img src={logo2} alt="Share Adawli" className="footer-made-logo" />
             <span className="footer-heart">♥</span>
             <span className="footer-credit-text">
-                احد مشاريع شير الدولي لتقنيه المعلومات
-           </span>
+              احد مشاريع شير الدولي لتقنيه المعلومات
+            </span>
           </div>
         </div>
       </div>

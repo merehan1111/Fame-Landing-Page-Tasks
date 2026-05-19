@@ -1,9 +1,12 @@
+import { useEffect, useRef } from "react";
 import { Search, Lightbulb, Newspaper, Users, Rocket, Star } from "lucide-react";
 import "./StardomSection.css";
 
 const starImage = new URL("../../assets/SVG/start.png", import.meta.url).href;
 
 export default function StardomSection() {
+  const sectionRef = useRef(null);
+
   const steps = [
     { title: "تحليل", icon: Search, position: "top" },
     { title: "استراتيجية", icon: Lightbulb, position: "bottom" },
@@ -13,8 +16,30 @@ export default function StardomSection() {
     { title: "نجومية", icon: Star, position: "bottom" },
   ];
 
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          section.classList.add("stardom-in-view");
+          observer.unobserve(section);
+        }
+      },
+      {
+        threshold: 0.28,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section dir="rtl" className="stardom-section">
+    <section ref={sectionRef} dir="rtl" className="stardom-section stardom-animate">
       <div className="stardom-container">
         <img
           src={starImage}
@@ -36,6 +61,7 @@ export default function StardomSection() {
         <div className="stardom-timeline">
           <svg className="stardom-line" viewBox="0 0 540 118" fill="none">
             <path
+              className="stardom-line-path"
               d="M538 59 L495 42 L408 78 L321 42 L234 78 L147 42 L60 78 L2 59"
               stroke="rgba(217,182,223,0.48)"
               strokeWidth="0.8"
@@ -56,12 +82,12 @@ export default function StardomSection() {
               </filter>
             </defs>
 
-            <circle cx="538" cy="59" r="16" fill="url(#dotGlow)" />
-            <circle cx="538" cy="59" r="5.5" fill="white" filter="url(#smallGlow)" />
-            <circle cx="538" cy="59" r="2.8" fill="white" />
+            <circle className="stardom-dot-glow" cx="538" cy="59" r="16" fill="url(#dotGlow)" />
+            <circle className="stardom-dot-main" cx="538" cy="59" r="5.5" fill="white" filter="url(#smallGlow)" />
+            <circle className="stardom-dot-core" cx="538" cy="59" r="2.8" fill="white" />
           </svg>
 
-          {steps.map((step) => {
+          {steps.map((step, index) => {
             const Icon = step.icon;
             const isTop = step.position === "top";
 
@@ -69,6 +95,7 @@ export default function StardomSection() {
               <div
                 key={step.title}
                 className={`stardom-step ${isTop ? "step-top" : "step-bottom"}`}
+                style={{ "--step-delay": `${0.95 + index * 0.12}s` }}
               >
                 {isTop && <span className="stardom-label">{step.title}</span>}
 
