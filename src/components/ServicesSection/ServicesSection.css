@@ -9,7 +9,9 @@
 
 .fame-services-section,
 .fame-services-section * {
-  font-family: "Cairo", sans-serif;
+
+  font-family: "CairoCustom", "Cairo", sans-serif;
+
 }
 
 .fame-services-section {

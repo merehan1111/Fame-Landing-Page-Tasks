@@ -5,7 +5,8 @@
   min-height: 600px;
   margin-top: -45px;
   overflow: hidden;
-  font-family: "Cairo", sans-serif;
+  font-family: "CairoCustom", "Cairo", sans-serif;
+
   background: #262053;
   z-index: 20;
 }

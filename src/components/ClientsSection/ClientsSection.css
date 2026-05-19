@@ -75,8 +75,7 @@
   margin: 36px auto 0;
   background: linear-gradient(90deg, #b84f99 0%, #6b2b76 100%);
   color: #ffffff;
-font-family: 'cairo';
-
+font-family: "CairoCustom", "Cairo", sans-serif;
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
